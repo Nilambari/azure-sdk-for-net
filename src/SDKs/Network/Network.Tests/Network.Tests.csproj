@@ -8,6 +8,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworks>netcoreapp1.1</TargetFrameworks>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>	
   </PropertyGroup>
 
   <ItemGroup>

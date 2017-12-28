@@ -52,6 +52,11 @@ namespace Microsoft.Azure.Management.Network
         string SubscriptionId { get; set; }
 
         /// <summary>
+        /// Client API version.
+        /// </summary>
+        string ApiVersion { get; }
+
+        /// <summary>
         /// Gets or sets the preferred language for the response.
         /// </summary>
         string AcceptLanguage { get; set; }
