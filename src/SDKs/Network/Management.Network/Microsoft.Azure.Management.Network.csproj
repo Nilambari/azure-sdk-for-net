@@ -7,9 +7,9 @@
 		<PackageId>Microsoft.Azure.Management.Network</PackageId>
 		<Description>Provides management capabilities for Network services.</Description>
 		<AssemblyName>Microsoft.Azure.Management.Network</AssemblyName>
-		<Version>16.1.0-preview</Version>
+		<Version>16.2.0-preview</Version>
 		<PackageTags>Microsoft Azure Network management;Network;Network management;</PackageTags>    
-		<PackageReleaseNotes>* Updated TopologyParameters with new optional properties: TargetVirtualNetwork, TargetSubnet; TargetResourceGroupName property changed to optional</PackageReleaseNotes>
+		<PackageReleaseNotes>*  Added new APIs:SetVpnclientIpsecParameters and GetVpnclientIpsecParameters to set and read the custom Ipsec policy for P2S clients resp. Updated VpnClientConfiguration with new optional property:VpnClientIpsecPolicies to be able to set ipsec policy for P2S vpnclients during create/update virtual network gateway. </PackageReleaseNotes>
 	</PropertyGroup>
 	<PropertyGroup>
 		<TargetFrameworks>net452;netstandard1.4</TargetFrameworks>
