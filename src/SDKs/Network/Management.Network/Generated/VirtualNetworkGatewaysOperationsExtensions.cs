@@ -1294,6 +1294,50 @@ namespace Microsoft.Azure.Management.Network
             }
 
             /// <summary>
+            /// The Get VpnclientIpsecParameters operation retrieves information about the
+            /// vpnclient ipsec policy for P2S client of virtual network gateway in the
+            /// specified resource group through Network resource provider.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group.
+            /// </param>
+            /// <param name='virtualNetworkGatewayName'>
+            /// The virtual network gateway name.
+            /// </param>
+            public static VpnClientIPsecParameters BeginGetVpnclientIpsecParameters(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName)
+            {
+                return operations.BeginGetVpnclientIpsecParametersAsync(resourceGroupName, virtualNetworkGatewayName).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// The Get VpnclientIpsecParameters operation retrieves information about the
+            /// vpnclient ipsec policy for P2S client of virtual network gateway in the
+            /// specified resource group through Network resource provider.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='resourceGroupName'>
+            /// The name of the resource group.
+            /// </param>
+            /// <param name='virtualNetworkGatewayName'>
+            /// The virtual network gateway name.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<VpnClientIPsecParameters> BeginGetVpnclientIpsecParametersAsync(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.BeginGetVpnclientIpsecParametersWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayName, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Gets all virtual network gateways by resource group.
             /// </summary>
             /// <param name='operations'>
