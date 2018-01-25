@@ -1098,10 +1098,10 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse<VirtualNetworkGateway>> SetVpnclientIpsecParametersWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VpnClientIPsecParameters>> SetVpnclientIpsecParametersWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send request
-            AzureOperationResponse<VirtualNetworkGateway> _response = await BeginSetVpnclientIpsecParametersWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams, customHeaders, cancellationToken).ConfigureAwait(false);
+            AzureOperationResponse<VpnClientIPsecParameters> _response = await BeginSetVpnclientIpsecParametersWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams, customHeaders, cancellationToken).ConfigureAwait(false);
             return await Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken).ConfigureAwait(false);
         }
 
@@ -3602,7 +3602,7 @@ namespace Microsoft.Azure.Management.Network
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<VirtualNetworkGateway>> BeginSetVpnclientIpsecParametersWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VpnClientIPsecParameters>> BeginSetVpnclientIpsecParametersWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (resourceGroupName == null)
             {
@@ -3751,7 +3751,7 @@ namespace Microsoft.Azure.Management.Network
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<VirtualNetworkGateway>();
+            var _result = new AzureOperationResponse<VpnClientIPsecParameters>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -3764,7 +3764,7 @@ namespace Microsoft.Azure.Management.Network
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<VirtualNetworkGateway>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<VpnClientIPsecParameters>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

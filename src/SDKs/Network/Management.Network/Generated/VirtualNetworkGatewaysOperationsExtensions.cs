@@ -654,7 +654,7 @@ namespace Microsoft.Azure.Management.Network
             /// Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual
             /// Network Gateway P2S client operation through Network resource provider.
             /// </param>
-            public static VirtualNetworkGateway SetVpnclientIpsecParameters(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams)
+            public static VpnClientIPsecParameters SetVpnclientIpsecParameters(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams)
             {
                 return operations.SetVpnclientIpsecParametersAsync(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams).GetAwaiter().GetResult();
             }
@@ -680,7 +680,7 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualNetworkGateway> SetVpnclientIpsecParametersAsync(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VpnClientIPsecParameters> SetVpnclientIpsecParametersAsync(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.SetVpnclientIpsecParametersWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -1259,7 +1259,7 @@ namespace Microsoft.Azure.Management.Network
             /// Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual
             /// Network Gateway P2S client operation through Network resource provider.
             /// </param>
-            public static VirtualNetworkGateway BeginSetVpnclientIpsecParameters(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams)
+            public static VpnClientIPsecParameters BeginSetVpnclientIpsecParameters(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams)
             {
                 return operations.BeginSetVpnclientIpsecParametersAsync(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams).GetAwaiter().GetResult();
             }
@@ -1285,7 +1285,7 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualNetworkGateway> BeginSetVpnclientIpsecParametersAsync(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VpnClientIPsecParameters> BeginSetVpnclientIpsecParametersAsync(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientIPsecParameters vpnclientIpsecParams, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.BeginSetVpnclientIpsecParametersWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams, null, cancellationToken).ConfigureAwait(false))
                 {

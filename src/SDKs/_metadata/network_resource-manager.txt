@@ -1,9 +1,9 @@
-2018-01-18 01:05:01 UTC
+2018-01-25 23:10:34 UTC
 
 1) azure-rest-api-specs repository information
 GitHub user: Nilambari
 Branch:      master7
-Commit:      c9f413cc29fa9eaf697f574aa69b2b54013f1fc5
+Commit:      064ea12416eb5fab6d204c44ec8455bbd5252fb9
 
 2) AutoRest information
 Requested version: latest
