@@ -15,27 +15,27 @@ namespace Microsoft.Azure.Management.Network.Models
     using System.Linq;
 
     /// <summary>
-    /// An IPSec Policy configuration for a virtual network gateway connection
+    /// An IPSec parameters for a virtual network gateway P2S connection.
     /// </summary>
-    public partial class IpsecPolicy
+    public partial class VpnClientIPsecParameters
     {
         /// <summary>
-        /// Initializes a new instance of the IpsecPolicy class.
+        /// Initializes a new instance of the VpnClientIPsecParameters class.
         /// </summary>
-        public IpsecPolicy()
+        public VpnClientIPsecParameters()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the IpsecPolicy class.
+        /// Initializes a new instance of the VpnClientIPsecParameters class.
         /// </summary>
         /// <param name="saLifeTimeSeconds">The IPSec Security Association
-        /// (also called Quick Mode or Phase 2 SA) lifetime in seconds for a
-        /// site to site VPN tunnel.</param>
+        /// (also called Quick Mode or Phase 2 SA) lifetime in seconds for P2S
+        /// client.</param>
         /// <param name="saDataSizeKilobytes">The IPSec Security Association
-        /// (also called Quick Mode or Phase 2 SA) payload size in KB for a
-        /// site to site VPN tunnel.</param>
+        /// (also called Quick Mode or Phase 2 SA) payload size in KB for P2S
+        /// client..</param>
         /// <param name="ipsecEncryption">The IPSec encryption algorithm (IKE
         /// phase 1). Possible values include: 'None', 'DES', 'DES3', 'AES128',
         /// 'AES192', 'AES256', 'GCMAES128', 'GCMAES192', 'GCMAES256'</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="pfsGroup">The Pfs Groups used in IKE Phase 2 for new
         /// child SA. Possible values include: 'None', 'PFS1', 'PFS2',
         /// 'PFS2048', 'ECP256', 'ECP384', 'PFS24', 'PFS14', 'PFSMM'</param>
-        public IpsecPolicy(int saLifeTimeSeconds, int saDataSizeKilobytes, string ipsecEncryption, string ipsecIntegrity, string ikeEncryption, string ikeIntegrity, string dhGroup, string pfsGroup)
+        public VpnClientIPsecParameters(int saLifeTimeSeconds, int saDataSizeKilobytes, string ipsecEncryption, string ipsecIntegrity, string ikeEncryption, string ikeIntegrity, string dhGroup, string pfsGroup)
         {
             SaLifeTimeSeconds = saLifeTimeSeconds;
             SaDataSizeKilobytes = saDataSizeKilobytes;
@@ -74,14 +74,14 @@ namespace Microsoft.Azure.Management.Network.Models
 
         /// <summary>
         /// Gets or sets the IPSec Security Association (also called Quick Mode
-        /// or Phase 2 SA) lifetime in seconds for a site to site VPN tunnel.
+        /// or Phase 2 SA) lifetime in seconds for P2S client.
         /// </summary>
         [JsonProperty(PropertyName = "saLifeTimeSeconds")]
         public int SaLifeTimeSeconds { get; set; }
 
         /// <summary>
         /// Gets or sets the IPSec Security Association (also called Quick Mode
-        /// or Phase 2 SA) payload size in KB for a site to site VPN tunnel.
+        /// or Phase 2 SA) payload size in KB for P2S client..
         /// </summary>
         [JsonProperty(PropertyName = "saDataSizeKilobytes")]
         public int SaDataSizeKilobytes { get; set; }
