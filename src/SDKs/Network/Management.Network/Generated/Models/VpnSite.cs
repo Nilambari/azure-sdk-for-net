@@ -51,9 +51,10 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
+        /// <param name="isSecuritySite">IsSecuritySite flag</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public VpnSite(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualWAN = default(SubResource), DeviceProperties deviceProperties = default(DeviceProperties), string ipAddress = default(string), string siteKey = default(string), AddressSpace addressSpace = default(AddressSpace), BgpSettings bgpProperties = default(BgpSettings), string provisioningState = default(string), string etag = default(string))
+        public VpnSite(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualWAN = default(SubResource), DeviceProperties deviceProperties = default(DeviceProperties), string ipAddress = default(string), string siteKey = default(string), AddressSpace addressSpace = default(AddressSpace), BgpSettings bgpProperties = default(BgpSettings), string provisioningState = default(string), bool? isSecuritySite = default(bool?), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             VirtualWAN = virtualWAN;
@@ -63,6 +64,7 @@ namespace Microsoft.Azure.Management.Network.Models
             AddressSpace = addressSpace;
             BgpProperties = bgpProperties;
             ProvisioningState = provisioningState;
+            IsSecuritySite = isSecuritySite;
             Etag = etag;
             CustomInit();
         }
@@ -115,6 +117,12 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }
+
+        /// <summary>
+        /// Gets or sets isSecuritySite flag
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.isSecuritySite")]
+        public bool? IsSecuritySite { get; set; }
 
         /// <summary>
         /// Gets a unique read-only string that changes whenever the resource

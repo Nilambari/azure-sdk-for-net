@@ -47,17 +47,20 @@ namespace Microsoft.Azure.Management.Network.Models
         /// transit to enabled or not.</param>
         /// <param name="allowRemoteVnetToUseHubVnetGateways">Allow RemoteVnet
         /// to use Virtual Hub's gateways.</param>
+        /// <param name="enableInternetSecurity">Enable internet
+        /// security</param>
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public HubVirtualNetworkConnection(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource remoteVirtualNetwork = default(SubResource), bool? allowHubToRemoteVnetTransit = default(bool?), bool? allowRemoteVnetToUseHubVnetGateways = default(bool?), string provisioningState = default(string), string etag = default(string))
+        public HubVirtualNetworkConnection(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource remoteVirtualNetwork = default(SubResource), bool? allowHubToRemoteVnetTransit = default(bool?), bool? allowRemoteVnetToUseHubVnetGateways = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             RemoteVirtualNetwork = remoteVirtualNetwork;
             AllowHubToRemoteVnetTransit = allowHubToRemoteVnetTransit;
             AllowRemoteVnetToUseHubVnetGateways = allowRemoteVnetToUseHubVnetGateways;
+            EnableInternetSecurity = enableInternetSecurity;
             ProvisioningState = provisioningState;
             Etag = etag;
             CustomInit();
@@ -85,6 +88,12 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.allowRemoteVnetToUseHubVnetGateways")]
         public bool? AllowRemoteVnetToUseHubVnetGateways { get; set; }
+
+        /// <summary>
+        /// Gets or sets enable internet security
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.enableInternetSecurity")]
+        public bool? EnableInternetSecurity { get; set; }
 
         /// <summary>
         /// Gets or sets the provisioning state of the resource. Possible

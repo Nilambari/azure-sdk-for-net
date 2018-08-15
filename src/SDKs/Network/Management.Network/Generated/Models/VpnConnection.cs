@@ -49,18 +49,21 @@ namespace Microsoft.Azure.Management.Network.Models
         /// transferred.</param>
         /// <param name="egressBytesTransferred">Egress bytes
         /// transferred.</param>
-        /// <param name="connectionBandwidthInMbps">Expected bandwidth in
+        /// <param name="connectionBandwidth">Expected bandwidth in
         /// MBPS.</param>
         /// <param name="sharedKey">SharedKey for the vpn connection.</param>
         /// <param name="enableBgp">EnableBgp flag</param>
         /// <param name="ipsecPolicies">The IPSec Policies to be considered by
         /// this connection.</param>
+        /// <param name="enableRateLimiting">EnableBgp flag</param>
+        /// <param name="enableInternetSecurity">Enable internet
+        /// security</param>
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public VpnConnection(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource remoteVpnSite = default(SubResource), int? routingWeight = default(int?), string connectionStatus = default(string), long? ingressBytesTransferred = default(long?), long? egressBytesTransferred = default(long?), int? connectionBandwidthInMbps = default(int?), string sharedKey = default(string), bool? enableBgp = default(bool?), IList<IpsecPolicy> ipsecPolicies = default(IList<IpsecPolicy>), string provisioningState = default(string), string etag = default(string))
+        public VpnConnection(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource remoteVpnSite = default(SubResource), int? routingWeight = default(int?), string connectionStatus = default(string), long? ingressBytesTransferred = default(long?), long? egressBytesTransferred = default(long?), int? connectionBandwidth = default(int?), string sharedKey = default(string), bool? enableBgp = default(bool?), IList<IpsecPolicy> ipsecPolicies = default(IList<IpsecPolicy>), bool? enableRateLimiting = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             RemoteVpnSite = remoteVpnSite;
@@ -68,10 +71,12 @@ namespace Microsoft.Azure.Management.Network.Models
             ConnectionStatus = connectionStatus;
             IngressBytesTransferred = ingressBytesTransferred;
             EgressBytesTransferred = egressBytesTransferred;
-            ConnectionBandwidthInMbps = connectionBandwidthInMbps;
+            ConnectionBandwidth = connectionBandwidth;
             SharedKey = sharedKey;
             EnableBgp = enableBgp;
             IpsecPolicies = ipsecPolicies;
+            EnableRateLimiting = enableRateLimiting;
+            EnableInternetSecurity = enableInternetSecurity;
             ProvisioningState = provisioningState;
             Etag = etag;
             CustomInit();
@@ -116,8 +121,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <summary>
         /// Gets expected bandwidth in MBPS.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.connectionBandwidthInMbps")]
-        public int? ConnectionBandwidthInMbps { get; private set; }
+        [JsonProperty(PropertyName = "properties.connectionBandwidth")]
+        public int? ConnectionBandwidth { get; private set; }
 
         /// <summary>
         /// Gets or sets sharedKey for the vpn connection.
@@ -137,6 +142,18 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.ipsecPolicies")]
         public IList<IpsecPolicy> IpsecPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets enableBgp flag
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.enableRateLimiting")]
+        public bool? EnableRateLimiting { get; set; }
+
+        /// <summary>
+        /// Gets or sets enable internet security
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.enableInternetSecurity")]
+        public bool? EnableInternetSecurity { get; set; }
 
         /// <summary>
         /// Gets or sets the provisioning state of the resource. Possible
