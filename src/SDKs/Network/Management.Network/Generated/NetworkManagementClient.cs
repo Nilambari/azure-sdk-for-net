@@ -871,7 +871,6 @@ namespace Microsoft.Azure.Management.Network
             return _result;
         }
 
-
         /// <summary>
         /// Gives the supported security providers for the virtual wan.
         /// </summary>
@@ -903,7 +902,7 @@ namespace Microsoft.Azure.Management.Network
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<VirtualWanSecurityProviders>> BeginSupportedSecurityProvidersWithHttpMessagesAsync(string resourceGroupName, string virtualWANName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<VirtualWanSecurityProviders>> SupportedSecurityProvidersWithHttpMessagesAsync(string resourceGroupName, string virtualWANName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (SubscriptionId == null)
             {
@@ -929,7 +928,7 @@ namespace Microsoft.Azure.Management.Network
                 tracingParameters.Add("virtualWANName", virtualWANName);
                 tracingParameters.Add("apiVersion", apiVersion);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "BeginSupportedSecurityProviders", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "SupportedSecurityProviders", tracingParameters);
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;

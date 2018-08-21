@@ -377,23 +377,5 @@ namespace Microsoft.Azure.Management.Network
         /// </param>
         Task<AzureOperationResponse<VirtualWanSecurityProviders>> SupportedSecurityProvidersWithHttpMessagesAsync(string resourceGroupName, string virtualWANName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gives the supported security providers for the virtual wan.
-        /// </summary>
-        /// <param name='resourceGroupName'>
-        /// The resource group name.
-        /// </param>
-        /// <param name='virtualWANName'>
-        /// The name of the VirtualWAN for which supported security providers
-        /// are needed.
-        /// </param>
-        /// <param name='customHeaders'>
-        /// The headers that will be added to request.
-        /// </param>
-        /// <param name='cancellationToken'>
-        /// The cancellation token.
-        /// </param>
-        Task<AzureOperationResponse<VirtualWanSecurityProviders>> BeginSupportedSecurityProvidersWithHttpMessagesAsync(string resourceGroupName, string virtualWANName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
-
     }
 }
