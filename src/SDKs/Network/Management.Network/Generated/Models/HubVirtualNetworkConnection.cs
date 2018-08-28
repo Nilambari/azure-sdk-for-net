@@ -13,15 +13,13 @@ namespace Microsoft.Azure.Management.Network.Models
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
     using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
     /// HubVirtualNetworkConnection Resource.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
-    public partial class HubVirtualNetworkConnection : Resource
+    public partial class HubVirtualNetworkConnection : SubResource
     {
         /// <summary>
         /// Initializes a new instance of the HubVirtualNetworkConnection
@@ -37,10 +35,6 @@ namespace Microsoft.Azure.Management.Network.Models
         /// class.
         /// </summary>
         /// <param name="id">Resource ID.</param>
-        /// <param name="name">Resource name.</param>
-        /// <param name="type">Resource type.</param>
-        /// <param name="location">Resource location.</param>
-        /// <param name="tags">Resource tags.</param>
         /// <param name="remoteVirtualNetwork">Reference to the remote virtual
         /// network.</param>
         /// <param name="allowHubToRemoteVnetTransit">VirtualHub to RemoteVnet
@@ -54,8 +48,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// 'Deleting', 'Failed'</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public HubVirtualNetworkConnection(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource remoteVirtualNetwork = default(SubResource), bool? allowHubToRemoteVnetTransit = default(bool?), bool? allowRemoteVnetToUseHubVnetGateways = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string etag = default(string))
-            : base(id, name, type, location, tags)
+        public HubVirtualNetworkConnection(string id = default(string), SubResource remoteVirtualNetwork = default(SubResource), bool? allowHubToRemoteVnetTransit = default(bool?), bool? allowRemoteVnetToUseHubVnetGateways = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string etag = default(string))
+            : base(id)
         {
             RemoteVirtualNetwork = remoteVirtualNetwork;
             AllowHubToRemoteVnetTransit = allowHubToRemoteVnetTransit;

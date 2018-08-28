@@ -21,7 +21,7 @@ namespace Microsoft.Azure.Management.Network.Models
     /// VpnConnection Resource.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
-    public partial class VpnConnection : Resource
+    public partial class VpnConnection : SubResource
     {
         /// <summary>
         /// Initializes a new instance of the VpnConnection class.
@@ -35,10 +35,6 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Initializes a new instance of the VpnConnection class.
         /// </summary>
         /// <param name="id">Resource ID.</param>
-        /// <param name="name">Resource name.</param>
-        /// <param name="type">Resource type.</param>
-        /// <param name="location">Resource location.</param>
-        /// <param name="tags">Resource tags.</param>
         /// <param name="remoteVpnSite">Id of the connected vpn site.</param>
         /// <param name="routingWeight">routing weight for vpn
         /// connection.</param>
@@ -63,10 +59,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
+        /// <param name="name">The name of the resource that is unique within a
+        /// resource group. This name can be used to access the
+        /// resource.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public VpnConnection(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource remoteVpnSite = default(SubResource), int? routingWeight = default(int?), string connectionStatus = default(string), string connectionProtocol = default(string), long? ingressBytesTransferred = default(long?), long? egressBytesTransferred = default(long?), int? connectionBandwidth = default(int?), string sharedKey = default(string), bool? enableBgp = default(bool?), IList<IpsecPolicy> ipsecPolicies = default(IList<IpsecPolicy>), bool? enableRateLimiting = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string etag = default(string))
-            : base(id, name, type, location, tags)
+        public VpnConnection(string id = default(string), SubResource remoteVpnSite = default(SubResource), int? routingWeight = default(int?), string connectionStatus = default(string), string connectionProtocol = default(string), long? ingressBytesTransferred = default(long?), long? egressBytesTransferred = default(long?), int? connectionBandwidth = default(int?), string sharedKey = default(string), bool? enableBgp = default(bool?), IList<IpsecPolicy> ipsecPolicies = default(IList<IpsecPolicy>), bool? enableRateLimiting = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string name = default(string), string etag = default(string))
+            : base(id)
         {
             RemoteVpnSite = remoteVpnSite;
             RoutingWeight = routingWeight;
@@ -81,6 +80,7 @@ namespace Microsoft.Azure.Management.Network.Models
             EnableRateLimiting = enableRateLimiting;
             EnableInternetSecurity = enableInternetSecurity;
             ProvisioningState = provisioningState;
+            Name = name;
             Etag = etag;
             CustomInit();
         }
@@ -171,6 +171,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }
+
+        /// <summary>
+        /// Gets the name of the resource that is unique within a resource
+        /// group. This name can be used to access the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets a unique read-only string that changes whenever the resource
