@@ -71,6 +71,11 @@ namespace Microsoft.Azure.Management.Network
 
 
         /// <summary>
+        /// Gets the IAzureFirewallsOperations.
+        /// </summary>
+        IAzureFirewallsOperations AzureFirewalls { get; }
+
+        /// <summary>
         /// Gets the IApplicationGatewaysOperations.
         /// </summary>
         IApplicationGatewaysOperations ApplicationGateways { get; }
@@ -79,11 +84,6 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IApplicationSecurityGroupsOperations.
         /// </summary>
         IApplicationSecurityGroupsOperations ApplicationSecurityGroups { get; }
-
-        /// <summary>
-        /// Gets the IAzureFirewallsOperations.
-        /// </summary>
-        IAzureFirewallsOperations AzureFirewalls { get; }
 
         /// <summary>
         /// Gets the IDdosProtectionPlansOperations.
@@ -251,16 +251,6 @@ namespace Microsoft.Azure.Management.Network
         IBgpServiceCommunitiesOperations BgpServiceCommunities { get; }
 
         /// <summary>
-        /// Gets the IServiceEndpointPoliciesOperations.
-        /// </summary>
-        IServiceEndpointPoliciesOperations ServiceEndpointPolicies { get; }
-
-        /// <summary>
-        /// Gets the IServiceEndpointPolicyDefinitionsOperations.
-        /// </summary>
-        IServiceEndpointPolicyDefinitionsOperations ServiceEndpointPolicyDefinitions { get; }
-
-        /// <summary>
         /// Gets the IUsagesOperations.
         /// </summary>
         IUsagesOperations Usages { get; }
@@ -339,6 +329,16 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IP2SVpnGatewaysOperations.
         /// </summary>
         IP2SVpnGatewaysOperations P2SVpnGateways { get; }
+
+        /// <summary>
+        /// Gets the IServiceEndpointPoliciesOperations.
+        /// </summary>
+        IServiceEndpointPoliciesOperations ServiceEndpointPolicies { get; }
+
+        /// <summary>
+        /// Gets the IServiceEndpointPolicyDefinitionsOperations.
+        /// </summary>
+        IServiceEndpointPolicyDefinitionsOperations ServiceEndpointPolicyDefinitions { get; }
 
         /// <summary>
         /// Checks whether a domain name in the cloudapp.azure.com zone is

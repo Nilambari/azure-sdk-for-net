@@ -1,9 +1,9 @@
-2018-08-28 00:33:18 UTC
+2018-08-28 02:00:33 UTC
 
 1) azure-rest-api-specs repository information
-GitHub user: ritwikbasu
-Branch:      Network-September-Release
-Commit:      937d500cd25096f137ff9b4a77c7933c3a8c977a
+GitHub user: ritwikorg
+Branch:      master
+Commit:      109b25eb07cb70095b30000949c8218be849ed08
 
 2) AutoRest information
 Requested version: latest

@@ -74,6 +74,11 @@ namespace Microsoft.Azure.Management.Network
         public bool? GenerateClientRequestId { get; set; }
 
         /// <summary>
+        /// Gets the IAzureFirewallsOperations.
+        /// </summary>
+        public virtual IAzureFirewallsOperations AzureFirewalls { get; private set; }
+
+        /// <summary>
         /// Gets the IApplicationGatewaysOperations.
         /// </summary>
         public virtual IApplicationGatewaysOperations ApplicationGateways { get; private set; }
@@ -82,11 +87,6 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IApplicationSecurityGroupsOperations.
         /// </summary>
         public virtual IApplicationSecurityGroupsOperations ApplicationSecurityGroups { get; private set; }
-
-        /// <summary>
-        /// Gets the IAzureFirewallsOperations.
-        /// </summary>
-        public virtual IAzureFirewallsOperations AzureFirewalls { get; private set; }
 
         /// <summary>
         /// Gets the IDdosProtectionPlansOperations.
@@ -254,16 +254,6 @@ namespace Microsoft.Azure.Management.Network
         public virtual IBgpServiceCommunitiesOperations BgpServiceCommunities { get; private set; }
 
         /// <summary>
-        /// Gets the IServiceEndpointPoliciesOperations.
-        /// </summary>
-        public virtual IServiceEndpointPoliciesOperations ServiceEndpointPolicies { get; private set; }
-
-        /// <summary>
-        /// Gets the IServiceEndpointPolicyDefinitionsOperations.
-        /// </summary>
-        public virtual IServiceEndpointPolicyDefinitionsOperations ServiceEndpointPolicyDefinitions { get; private set; }
-
-        /// <summary>
         /// Gets the IUsagesOperations.
         /// </summary>
         public virtual IUsagesOperations Usages { get; private set; }
@@ -342,6 +332,16 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IP2SVpnGatewaysOperations.
         /// </summary>
         public virtual IP2SVpnGatewaysOperations P2SVpnGateways { get; private set; }
+
+        /// <summary>
+        /// Gets the IServiceEndpointPoliciesOperations.
+        /// </summary>
+        public virtual IServiceEndpointPoliciesOperations ServiceEndpointPolicies { get; private set; }
+
+        /// <summary>
+        /// Gets the IServiceEndpointPolicyDefinitionsOperations.
+        /// </summary>
+        public virtual IServiceEndpointPolicyDefinitionsOperations ServiceEndpointPolicyDefinitions { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the NetworkManagementClient class.
@@ -584,9 +584,9 @@ namespace Microsoft.Azure.Management.Network
         /// </summary>
         private void Initialize()
         {
+            AzureFirewalls = new AzureFirewallsOperations(this);
             ApplicationGateways = new ApplicationGatewaysOperations(this);
             ApplicationSecurityGroups = new ApplicationSecurityGroupsOperations(this);
-            AzureFirewalls = new AzureFirewallsOperations(this);
             DdosProtectionPlans = new DdosProtectionPlansOperations(this);
             AvailableEndpointServices = new AvailableEndpointServicesOperations(this);
             ExpressRouteCircuitAuthorizations = new ExpressRouteCircuitAuthorizationsOperations(this);
@@ -620,8 +620,6 @@ namespace Microsoft.Azure.Management.Network
             RouteTables = new RouteTablesOperations(this);
             Routes = new RoutesOperations(this);
             BgpServiceCommunities = new BgpServiceCommunitiesOperations(this);
-            ServiceEndpointPolicies = new ServiceEndpointPoliciesOperations(this);
-            ServiceEndpointPolicyDefinitions = new ServiceEndpointPolicyDefinitionsOperations(this);
             Usages = new UsagesOperations(this);
             VirtualNetworks = new VirtualNetworksOperations(this);
             Subnets = new SubnetsOperations(this);
@@ -638,6 +636,8 @@ namespace Microsoft.Azure.Management.Network
             VpnConnections = new VpnConnectionsOperations(this);
             P2SVpnServerConfigurations = new P2SVpnServerConfigurationsOperations(this);
             P2SVpnGateways = new P2SVpnGatewaysOperations(this);
+            ServiceEndpointPolicies = new ServiceEndpointPoliciesOperations(this);
+            ServiceEndpointPolicyDefinitions = new ServiceEndpointPolicyDefinitionsOperations(this);
             BaseUri = new System.Uri("https://management.azure.com");
             AcceptLanguage = "en-US";
             LongRunningOperationRetryTimeout = 30;
@@ -718,7 +718,7 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.SubscriptionId");
             }
-            string apiVersion = "2018-08-01";
+            string apiVersion = "2018-07-01";
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -916,7 +916,7 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "virtualWANName");
             }
-            string apiVersion = "2018-08-01";
+            string apiVersion = "2018-07-01";
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
