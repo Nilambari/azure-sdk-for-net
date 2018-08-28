@@ -39,7 +39,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="type">Resource type.</param>
         /// <param name="location">Resource location.</param>
         /// <param name="tags">Resource tags.</param>
-        /// <param name="virtualWAN">The VirtualWAN to which the vpnSite
+        /// <param name="virtualWan">The VirtualWAN to which the vpnSite
         /// belongs</param>
         /// <param name="deviceProperties">The device properties</param>
         /// <param name="ipAddress">The ip-address for the vpn-site.</param>
@@ -54,10 +54,10 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="isSecuritySite">IsSecuritySite flag</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public VpnSite(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualWAN = default(SubResource), DeviceProperties deviceProperties = default(DeviceProperties), string ipAddress = default(string), string siteKey = default(string), AddressSpace addressSpace = default(AddressSpace), BgpSettings bgpProperties = default(BgpSettings), string provisioningState = default(string), bool? isSecuritySite = default(bool?), string etag = default(string))
+        public VpnSite(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualWan = default(SubResource), DeviceProperties deviceProperties = default(DeviceProperties), string ipAddress = default(string), string siteKey = default(string), AddressSpace addressSpace = default(AddressSpace), BgpSettings bgpProperties = default(BgpSettings), string provisioningState = default(string), bool? isSecuritySite = default(bool?), string etag = default(string))
             : base(id, name, type, location, tags)
         {
-            VirtualWAN = virtualWAN;
+            VirtualWan = virtualWan;
             DeviceProperties = deviceProperties;
             IpAddress = ipAddress;
             SiteKey = siteKey;
@@ -77,8 +77,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <summary>
         /// Gets or sets the VirtualWAN to which the vpnSite belongs
         /// </summary>
-        [JsonProperty(PropertyName = "properties.virtualWAN")]
-        public SubResource VirtualWAN { get; set; }
+        [JsonProperty(PropertyName = "properties.virtualWan")]
+        public SubResource VirtualWan { get; set; }
 
         /// <summary>
         /// Gets or sets the device properties

@@ -45,17 +45,20 @@ namespace Microsoft.Azure.Management.Network.Models
         /// connections with this VirtualHub.</param>
         /// <param name="addressPrefix">Address-prefix for this
         /// VirtualHub.</param>
+        /// <param name="routeTable">The routeTable associated with this
+        /// virtual hub.</param>
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public VirtualHub(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualWan = default(SubResource), IList<HubVirtualNetworkConnection> virtualNetworkConnections = default(IList<HubVirtualNetworkConnection>), string addressPrefix = default(string), string provisioningState = default(string), string etag = default(string))
+        public VirtualHub(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualWan = default(SubResource), IList<HubVirtualNetworkConnection> virtualNetworkConnections = default(IList<HubVirtualNetworkConnection>), string addressPrefix = default(string), VirtualHubRouteTable routeTable = default(VirtualHubRouteTable), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             VirtualWan = virtualWan;
             VirtualNetworkConnections = virtualNetworkConnections;
             AddressPrefix = addressPrefix;
+            RouteTable = routeTable;
             ProvisioningState = provisioningState;
             Etag = etag;
             CustomInit();
@@ -83,6 +86,12 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.addressPrefix")]
         public string AddressPrefix { get; set; }
+
+        /// <summary>
+        /// Gets or sets the routeTable associated with this virtual hub.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.routeTable")]
+        public VirtualHubRouteTable RouteTable { get; set; }
 
         /// <summary>
         /// Gets or sets the provisioning state of the resource. Possible
