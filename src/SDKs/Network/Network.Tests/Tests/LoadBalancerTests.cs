@@ -1569,7 +1569,7 @@ namespace Networks.Tests
 
             //    // Delete all PublicIPAddresses
             //    networkManagementClient.PublicIPAddresses.Delete(resourceGroupName, lbPublicIpName);
-            }
+            //}
         }
     }
 }
