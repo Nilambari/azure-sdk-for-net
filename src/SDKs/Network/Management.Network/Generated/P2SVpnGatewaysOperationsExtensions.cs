@@ -271,7 +271,7 @@ namespace Microsoft.Azure.Management.Network
             /// Parameters supplied to the generate P2SVpnGateway VPN client package
             /// operation.
             /// </param>
-            public static string GenerateVpnProfile(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnProfileParameters parameters)
+            public static VpnProfileResponse GenerateVpnProfile(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnProfileParameters parameters)
             {
                 return operations.GenerateVpnProfileAsync(resourceGroupName, gatewayName, parameters).GetAwaiter().GetResult();
             }
@@ -296,7 +296,7 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<string> GenerateVpnProfileAsync(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnProfileParameters parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VpnProfileResponse> GenerateVpnProfileAsync(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnProfileParameters parameters, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.GenerateVpnProfileWithHttpMessagesAsync(resourceGroupName, gatewayName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
@@ -452,7 +452,7 @@ namespace Microsoft.Azure.Management.Network
             /// Parameters supplied to the generate P2SVpnGateway VPN client package
             /// operation.
             /// </param>
-            public static string BeginGenerateVpnProfile(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnProfileParameters parameters)
+            public static VpnProfileResponse BeginGenerateVpnProfile(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnProfileParameters parameters)
             {
                 return operations.BeginGenerateVpnProfileAsync(resourceGroupName, gatewayName, parameters).GetAwaiter().GetResult();
             }
@@ -477,7 +477,7 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<string> BeginGenerateVpnProfileAsync(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnProfileParameters parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VpnProfileResponse> BeginGenerateVpnProfileAsync(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnProfileParameters parameters, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.BeginGenerateVpnProfileWithHttpMessagesAsync(resourceGroupName, gatewayName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {

@@ -13,15 +13,13 @@ namespace Microsoft.Azure.Management.Network.Models
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
     using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
     /// HubVirtualNetworkConnection Resource.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
-    public partial class HubVirtualNetworkConnection : Resource
+    public partial class HubVirtualNetworkConnection : SubResource
     {
         /// <summary>
         /// Initializes a new instance of the HubVirtualNetworkConnection
@@ -37,10 +35,6 @@ namespace Microsoft.Azure.Management.Network.Models
         /// class.
         /// </summary>
         /// <param name="id">Resource ID.</param>
-        /// <param name="name">Resource name.</param>
-        /// <param name="type">Resource type.</param>
-        /// <param name="location">Resource location.</param>
-        /// <param name="tags">Resource tags.</param>
         /// <param name="remoteVirtualNetwork">Reference to the remote virtual
         /// network.</param>
         /// <param name="allowHubToRemoteVnetTransit">VirtualHub to RemoteVnet
@@ -52,16 +46,20 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
+        /// <param name="name">The name of the resource that is unique within a
+        /// resource group. This name can be used to access the
+        /// resource.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public HubVirtualNetworkConnection(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource remoteVirtualNetwork = default(SubResource), bool? allowHubToRemoteVnetTransit = default(bool?), bool? allowRemoteVnetToUseHubVnetGateways = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string etag = default(string))
-            : base(id, name, type, location, tags)
+        public HubVirtualNetworkConnection(string id = default(string), SubResource remoteVirtualNetwork = default(SubResource), bool? allowHubToRemoteVnetTransit = default(bool?), bool? allowRemoteVnetToUseHubVnetGateways = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string name = default(string), string etag = default(string))
+            : base(id)
         {
             RemoteVirtualNetwork = remoteVirtualNetwork;
             AllowHubToRemoteVnetTransit = allowHubToRemoteVnetTransit;
             AllowRemoteVnetToUseHubVnetGateways = allowRemoteVnetToUseHubVnetGateways;
             EnableInternetSecurity = enableInternetSecurity;
             ProvisioningState = provisioningState;
+            Name = name;
             Etag = etag;
             CustomInit();
         }
@@ -101,6 +99,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the resource that is unique within a
+        /// resource group. This name can be used to access the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets a unique read-only string that changes whenever the resource

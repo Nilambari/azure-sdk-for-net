@@ -21,7 +21,7 @@ namespace Microsoft.Azure.Management.Network.Models
     /// P2SVpnServerConfiguration Resource.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
-    public partial class P2SVpnServerConfiguration : Resource
+    public partial class P2SVpnServerConfiguration : SubResource
     {
         /// <summary>
         /// Initializes a new instance of the P2SVpnServerConfiguration class.
@@ -35,10 +35,6 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Initializes a new instance of the P2SVpnServerConfiguration class.
         /// </summary>
         /// <param name="id">Resource ID.</param>
-        /// <param name="name">Resource name.</param>
-        /// <param name="type">Resource type.</param>
-        /// <param name="location">Resource location.</param>
-        /// <param name="tags">Resource tags.</param>
         /// <param name="vpnProtocols">vpnProtocols for the
         /// P2SVpnServerConfiguration.</param>
         /// <param name="p2sVpnServerConfigVpnClientRootCertificates">VPN
@@ -49,7 +45,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Server root certificate of P2SVpnServerConfiguration.</param>
         /// <param name="p2sVpnServerConfigRadiusClientRootCertificates">Radius
         /// client root certificate of P2SVpnServerConfiguration.</param>
-        /// <param name="vspnClientIpsecPolicies">VpnClientIpsecPolicies for
+        /// <param name="vpnClientIpsecPolicies">VpnClientIpsecPolicies for
         /// P2SVpnServerConfiguration.</param>
         /// <param name="radiusServerAddress">The radius server address
         /// property of the P2SVpnServerConfiguration resource for point to
@@ -57,20 +53,24 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="radiusServerSecret">The radius secret property of the
         /// P2SVpnServerConfiguration resource for for point to site client
         /// connection.</param>
+        /// <param name="name">The name of the resource that is unique within a
+        /// resource group. This name can be used to access the
+        /// resource.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public P2SVpnServerConfiguration(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<string> vpnProtocols = default(IList<string>), IList<P2SVpnServerConfigVpnClientRootCertificate> p2sVpnServerConfigVpnClientRootCertificates = default(IList<P2SVpnServerConfigVpnClientRootCertificate>), IList<P2SVpnServerConfigVpnClientRevokedCertificate> p2sVpnServerConfigVpnClientRevokedCertificates = default(IList<P2SVpnServerConfigVpnClientRevokedCertificate>), IList<P2SVpnServerConfigRadiusServerRootCertificate> p2sVpnServerConfigRadiusServerRootCertificates = default(IList<P2SVpnServerConfigRadiusServerRootCertificate>), IList<P2SVpnServerConfigRadiusClientRootCertificate> p2sVpnServerConfigRadiusClientRootCertificates = default(IList<P2SVpnServerConfigRadiusClientRootCertificate>), IList<IpsecPolicy> vspnClientIpsecPolicies = default(IList<IpsecPolicy>), string radiusServerAddress = default(string), string radiusServerSecret = default(string), IList<SubResource> p2sVpnGateways = default(IList<SubResource>), string etag = default(string))
-            : base(id, name, type, location, tags)
+        public P2SVpnServerConfiguration(string id = default(string), IList<string> vpnProtocols = default(IList<string>), IList<P2SVpnServerConfigVpnClientRootCertificate> p2sVpnServerConfigVpnClientRootCertificates = default(IList<P2SVpnServerConfigVpnClientRootCertificate>), IList<P2SVpnServerConfigVpnClientRevokedCertificate> p2sVpnServerConfigVpnClientRevokedCertificates = default(IList<P2SVpnServerConfigVpnClientRevokedCertificate>), IList<P2SVpnServerConfigRadiusServerRootCertificate> p2sVpnServerConfigRadiusServerRootCertificates = default(IList<P2SVpnServerConfigRadiusServerRootCertificate>), IList<P2SVpnServerConfigRadiusClientRootCertificate> p2sVpnServerConfigRadiusClientRootCertificates = default(IList<P2SVpnServerConfigRadiusClientRootCertificate>), IList<IpsecPolicy> vpnClientIpsecPolicies = default(IList<IpsecPolicy>), string radiusServerAddress = default(string), string radiusServerSecret = default(string), IList<SubResource> p2sVpnGateways = default(IList<SubResource>), string name = default(string), string etag = default(string))
+            : base(id)
         {
             VpnProtocols = vpnProtocols;
             P2sVpnServerConfigVpnClientRootCertificates = p2sVpnServerConfigVpnClientRootCertificates;
             P2sVpnServerConfigVpnClientRevokedCertificates = p2sVpnServerConfigVpnClientRevokedCertificates;
             P2sVpnServerConfigRadiusServerRootCertificates = p2sVpnServerConfigRadiusServerRootCertificates;
             P2sVpnServerConfigRadiusClientRootCertificates = p2sVpnServerConfigRadiusClientRootCertificates;
-            VspnClientIpsecPolicies = vspnClientIpsecPolicies;
+            VpnClientIpsecPolicies = vpnClientIpsecPolicies;
             RadiusServerAddress = radiusServerAddress;
             RadiusServerSecret = radiusServerSecret;
             P2sVpnGateways = p2sVpnGateways;
+            Name = name;
             Etag = etag;
             CustomInit();
         }
@@ -117,8 +117,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <summary>
         /// Gets or sets vpnClientIpsecPolicies for P2SVpnServerConfiguration.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.vspnClientIpsecPolicies")]
-        public IList<IpsecPolicy> VspnClientIpsecPolicies { get; set; }
+        [JsonProperty(PropertyName = "properties.vpnClientIpsecPolicies")]
+        public IList<IpsecPolicy> VpnClientIpsecPolicies { get; set; }
 
         /// <summary>
         /// Gets or sets the radius server address property of the
@@ -140,6 +140,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.p2sVpnGateways")]
         public IList<SubResource> P2sVpnGateways { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the name of the resource that is unique within a
+        /// resource group. This name can be used to access the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets a unique read-only string that changes whenever the resource
