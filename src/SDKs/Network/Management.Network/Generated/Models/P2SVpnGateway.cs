@@ -41,8 +41,6 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="tags">Resource tags.</param>
         /// <param name="virtualHub">The VirtualHub to which the gateway
         /// belongs</param>
-        /// <param name="bgpSettings">Local network gateway's BGP speaker
-        /// settings.</param>
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
@@ -58,11 +56,10 @@ namespace Microsoft.Azure.Management.Network.Models
         /// vpnclients' connection health status.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public P2SVpnGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualHub = default(SubResource), BgpSettings bgpSettings = default(BgpSettings), string provisioningState = default(string), int? vpnGatewayScaleUnit = default(int?), SubResource p2sVpnServerConfiguration = default(SubResource), AddressSpace vpnClientAddressPool = default(AddressSpace), IList<VpnClientConnectionHealth> vpnClientConnectionHealth = default(IList<VpnClientConnectionHealth>), string etag = default(string))
+        public P2SVpnGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualHub = default(SubResource), string provisioningState = default(string), int? vpnGatewayScaleUnit = default(int?), P2SVpnServerConfiguration p2sVpnServerConfiguration = default(P2SVpnServerConfiguration), AddressSpace vpnClientAddressPool = default(AddressSpace), IList<VpnClientConnectionHealth> vpnClientConnectionHealth = default(IList<VpnClientConnectionHealth>), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             VirtualHub = virtualHub;
-            BgpSettings = bgpSettings;
             ProvisioningState = provisioningState;
             VpnGatewayScaleUnit = vpnGatewayScaleUnit;
             P2sVpnServerConfiguration = p2sVpnServerConfiguration;
@@ -84,12 +81,6 @@ namespace Microsoft.Azure.Management.Network.Models
         public SubResource VirtualHub { get; set; }
 
         /// <summary>
-        /// Gets or sets local network gateway's BGP speaker settings.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.bgpSettings")]
-        public BgpSettings BgpSettings { get; set; }
-
-        /// <summary>
         /// Gets or sets the provisioning state of the resource. Possible
         /// values include: 'Succeeded', 'Updating', 'Deleting', 'Failed'
         /// </summary>
@@ -107,7 +98,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// p2sVpnGateway is attached to.
         /// </summary>
         [JsonProperty(PropertyName = "properties.p2sVpnServerConfiguration")]
-        public SubResource P2sVpnServerConfiguration { get; set; }
+        public P2SVpnServerConfiguration P2sVpnServerConfiguration { get; set; }
 
         /// <summary>
         /// Gets or sets the reference of the address space resource which

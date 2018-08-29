@@ -53,7 +53,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// breakout category. Possible values include: 'Optimize',
         /// 'OptimizeAndAllow', 'All', 'None'</param>
         /// <param name="p2sVpnServerConfigurations">list of all
-        /// P2SVpnServerConfigurationss to the virtual wan.</param>
+        /// P2SVpnServerConfigurations associated with the virtual wan.</param>
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
@@ -123,8 +123,8 @@ namespace Microsoft.Azure.Management.Network.Models
         public string Office365LocalBreakoutCategory { get; set; }
 
         /// <summary>
-        /// Gets or sets list of all P2SVpnServerConfigurationss to the virtual
-        /// wan.
+        /// Gets or sets list of all P2SVpnServerConfigurations associated with
+        /// the virtual wan.
         /// </summary>
         [JsonProperty(PropertyName = "properties.p2sVpnServerConfigurations")]
         public IList<P2SVpnServerConfiguration> P2sVpnServerConfigurations { get; set; }
