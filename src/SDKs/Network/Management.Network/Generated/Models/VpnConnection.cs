@@ -129,10 +129,10 @@ namespace Microsoft.Azure.Management.Network.Models
         public long? EgressBytesTransferred { get; private set; }
 
         /// <summary>
-        /// Gets expected bandwidth in MBPS.
+        /// Gets or sets expected bandwidth in MBPS.
         /// </summary>
         [JsonProperty(PropertyName = "properties.connectionBandwidth")]
-        public int? ConnectionBandwidth { get; private set; }
+        public int? ConnectionBandwidth { get; set; }
 
         /// <summary>
         /// Gets or sets sharedKey for the vpn connection.
@@ -173,11 +173,11 @@ namespace Microsoft.Azure.Management.Network.Models
         public string ProvisioningState { get; set; }
 
         /// <summary>
-        /// Gets the name of the resource that is unique within a resource
-        /// group. This name can be used to access the resource.
+        /// Gets or sets the name of the resource that is unique within a
+        /// resource group. This name can be used to access the resource.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Gets a unique read-only string that changes whenever the resource
