@@ -37,13 +37,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="id">Resource ID.</param>
         /// <param name="vpnProtocols">vpnProtocols for the
         /// P2SVpnServerConfiguration.</param>
-        /// <param name="p2sVpnServerConfigVpnClientRootCertificates">VPN
+        /// <param name="p2SVpnServerConfigVpnClientRootCertificates">VPN
         /// client root certificate of P2SVpnServerConfiguration.</param>
-        /// <param name="p2sVpnServerConfigVpnClientRevokedCertificates">VPN
+        /// <param name="p2SVpnServerConfigVpnClientRevokedCertificates">VPN
         /// client revoked certificate of P2SVpnServerConfiguration.</param>
-        /// <param name="p2sVpnServerConfigRadiusServerRootCertificates">Radius
+        /// <param name="p2SVpnServerConfigRadiusServerRootCertificates">Radius
         /// Server root certificate of P2SVpnServerConfiguration.</param>
-        /// <param name="p2sVpnServerConfigRadiusClientRootCertificates">Radius
+        /// <param name="p2SVpnServerConfigRadiusClientRootCertificates">Radius
         /// client root certificate of P2SVpnServerConfiguration.</param>
         /// <param name="vpnClientIpsecPolicies">VpnClientIpsecPolicies for
         /// P2SVpnServerConfiguration.</param>
@@ -58,18 +58,18 @@ namespace Microsoft.Azure.Management.Network.Models
         /// resource.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public P2SVpnServerConfiguration(string id = default(string), IList<string> vpnProtocols = default(IList<string>), IList<P2SVpnServerConfigVpnClientRootCertificate> p2sVpnServerConfigVpnClientRootCertificates = default(IList<P2SVpnServerConfigVpnClientRootCertificate>), IList<P2SVpnServerConfigVpnClientRevokedCertificate> p2sVpnServerConfigVpnClientRevokedCertificates = default(IList<P2SVpnServerConfigVpnClientRevokedCertificate>), IList<P2SVpnServerConfigRadiusServerRootCertificate> p2sVpnServerConfigRadiusServerRootCertificates = default(IList<P2SVpnServerConfigRadiusServerRootCertificate>), IList<P2SVpnServerConfigRadiusClientRootCertificate> p2sVpnServerConfigRadiusClientRootCertificates = default(IList<P2SVpnServerConfigRadiusClientRootCertificate>), IList<IpsecPolicy> vpnClientIpsecPolicies = default(IList<IpsecPolicy>), string radiusServerAddress = default(string), string radiusServerSecret = default(string), IList<SubResource> p2sVpnGateways = default(IList<SubResource>), string name = default(string), string etag = default(string))
+        public P2SVpnServerConfiguration(string id = default(string), IList<string> vpnProtocols = default(IList<string>), IList<P2SVpnServerConfigVpnClientRootCertificate> p2SVpnServerConfigVpnClientRootCertificates = default(IList<P2SVpnServerConfigVpnClientRootCertificate>), IList<P2SVpnServerConfigVpnClientRevokedCertificate> p2SVpnServerConfigVpnClientRevokedCertificates = default(IList<P2SVpnServerConfigVpnClientRevokedCertificate>), IList<P2SVpnServerConfigRadiusServerRootCertificate> p2SVpnServerConfigRadiusServerRootCertificates = default(IList<P2SVpnServerConfigRadiusServerRootCertificate>), IList<P2SVpnServerConfigRadiusClientRootCertificate> p2SVpnServerConfigRadiusClientRootCertificates = default(IList<P2SVpnServerConfigRadiusClientRootCertificate>), IList<IpsecPolicy> vpnClientIpsecPolicies = default(IList<IpsecPolicy>), string radiusServerAddress = default(string), string radiusServerSecret = default(string), IList<SubResource> p2SVpnGateways = default(IList<SubResource>), string name = default(string), string etag = default(string))
             : base(id)
         {
             VpnProtocols = vpnProtocols;
-            P2sVpnServerConfigVpnClientRootCertificates = p2sVpnServerConfigVpnClientRootCertificates;
-            P2sVpnServerConfigVpnClientRevokedCertificates = p2sVpnServerConfigVpnClientRevokedCertificates;
-            P2sVpnServerConfigRadiusServerRootCertificates = p2sVpnServerConfigRadiusServerRootCertificates;
-            P2sVpnServerConfigRadiusClientRootCertificates = p2sVpnServerConfigRadiusClientRootCertificates;
+            P2SVpnServerConfigVpnClientRootCertificates = p2SVpnServerConfigVpnClientRootCertificates;
+            P2SVpnServerConfigVpnClientRevokedCertificates = p2SVpnServerConfigVpnClientRevokedCertificates;
+            P2SVpnServerConfigRadiusServerRootCertificates = p2SVpnServerConfigRadiusServerRootCertificates;
+            P2SVpnServerConfigRadiusClientRootCertificates = p2SVpnServerConfigRadiusClientRootCertificates;
             VpnClientIpsecPolicies = vpnClientIpsecPolicies;
             RadiusServerAddress = radiusServerAddress;
             RadiusServerSecret = radiusServerSecret;
-            P2sVpnGateways = p2sVpnGateways;
+            P2SVpnGateways = p2SVpnGateways;
             Name = name;
             Etag = etag;
             CustomInit();
@@ -90,29 +90,29 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets or sets VPN client root certificate of
         /// P2SVpnServerConfiguration.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.p2sVpnServerConfigVpnClientRootCertificates")]
-        public IList<P2SVpnServerConfigVpnClientRootCertificate> P2sVpnServerConfigVpnClientRootCertificates { get; set; }
+        [JsonProperty(PropertyName = "properties.p2SVpnServerConfigVpnClientRootCertificates")]
+        public IList<P2SVpnServerConfigVpnClientRootCertificate> P2SVpnServerConfigVpnClientRootCertificates { get; set; }
 
         /// <summary>
         /// Gets or sets VPN client revoked certificate of
         /// P2SVpnServerConfiguration.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.p2sVpnServerConfigVpnClientRevokedCertificates")]
-        public IList<P2SVpnServerConfigVpnClientRevokedCertificate> P2sVpnServerConfigVpnClientRevokedCertificates { get; set; }
+        [JsonProperty(PropertyName = "properties.p2SVpnServerConfigVpnClientRevokedCertificates")]
+        public IList<P2SVpnServerConfigVpnClientRevokedCertificate> P2SVpnServerConfigVpnClientRevokedCertificates { get; set; }
 
         /// <summary>
         /// Gets or sets radius Server root certificate of
         /// P2SVpnServerConfiguration.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.p2sVpnServerConfigRadiusServerRootCertificates")]
-        public IList<P2SVpnServerConfigRadiusServerRootCertificate> P2sVpnServerConfigRadiusServerRootCertificates { get; set; }
+        [JsonProperty(PropertyName = "properties.p2SVpnServerConfigRadiusServerRootCertificates")]
+        public IList<P2SVpnServerConfigRadiusServerRootCertificate> P2SVpnServerConfigRadiusServerRootCertificates { get; set; }
 
         /// <summary>
         /// Gets or sets radius client root certificate of
         /// P2SVpnServerConfiguration.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.p2sVpnServerConfigRadiusClientRootCertificates")]
-        public IList<P2SVpnServerConfigRadiusClientRootCertificate> P2sVpnServerConfigRadiusClientRootCertificates { get; set; }
+        [JsonProperty(PropertyName = "properties.p2SVpnServerConfigRadiusClientRootCertificates")]
+        public IList<P2SVpnServerConfigRadiusClientRootCertificate> P2SVpnServerConfigRadiusClientRootCertificates { get; set; }
 
         /// <summary>
         /// Gets or sets vpnClientIpsecPolicies for P2SVpnServerConfiguration.
@@ -138,8 +138,8 @@ namespace Microsoft.Azure.Management.Network.Models
 
         /// <summary>
         /// </summary>
-        [JsonProperty(PropertyName = "properties.p2sVpnGateways")]
-        public IList<SubResource> P2sVpnGateways { get; private set; }
+        [JsonProperty(PropertyName = "properties.p2SVpnGateways")]
+        public IList<SubResource> P2SVpnGateways { get; private set; }
 
         /// <summary>
         /// Gets or sets the name of the resource that is unique within a
