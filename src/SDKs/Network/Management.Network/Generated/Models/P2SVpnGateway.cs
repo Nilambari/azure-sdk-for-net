@@ -46,7 +46,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// 'Deleting', 'Failed'</param>
         /// <param name="vpnGatewayScaleUnit">The scale unit for this p2s vpn
         /// gateway.</param>
-        /// <param name="p2sVpnServerConfiguration">The
+        /// <param name="p2SVpnServerConfiguration">The
         /// P2SVpnServerConfiguration to which the p2sVpnGateway is attached
         /// to.</param>
         /// <param name="vpnClientAddressPool">The reference of the address
@@ -56,13 +56,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// vpnclients' connection health status.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public P2SVpnGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualHub = default(SubResource), string provisioningState = default(string), int? vpnGatewayScaleUnit = default(int?), P2SVpnServerConfiguration p2sVpnServerConfiguration = default(P2SVpnServerConfiguration), AddressSpace vpnClientAddressPool = default(AddressSpace), IList<VpnClientConnectionHealth> vpnClientConnectionHealth = default(IList<VpnClientConnectionHealth>), string etag = default(string))
+        public P2SVpnGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualHub = default(SubResource), string provisioningState = default(string), int? vpnGatewayScaleUnit = default(int?), P2SVpnServerConfiguration p2SVpnServerConfiguration = default(P2SVpnServerConfiguration), AddressSpace vpnClientAddressPool = default(AddressSpace), IList<VpnClientConnectionHealth> vpnClientConnectionHealth = default(IList<VpnClientConnectionHealth>), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             VirtualHub = virtualHub;
             ProvisioningState = provisioningState;
             VpnGatewayScaleUnit = vpnGatewayScaleUnit;
-            P2sVpnServerConfiguration = p2sVpnServerConfiguration;
+            P2SVpnServerConfiguration = p2SVpnServerConfiguration;
             VpnClientAddressPool = vpnClientAddressPool;
             VpnClientConnectionHealth = vpnClientConnectionHealth;
             Etag = etag;
@@ -97,8 +97,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets or sets the P2SVpnServerConfiguration to which the
         /// p2sVpnGateway is attached to.
         /// </summary>
-        [JsonProperty(PropertyName = "properties.p2sVpnServerConfiguration")]
-        public P2SVpnServerConfiguration P2sVpnServerConfiguration { get; set; }
+        [JsonProperty(PropertyName = "properties.p2SVpnServerConfiguration")]
+        public P2SVpnServerConfiguration P2SVpnServerConfiguration { get; set; }
 
         /// <summary>
         /// Gets or sets the reference of the address space resource which
