@@ -43,6 +43,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// belongs</param>
         /// <param name="vpnGateway">The VpnGateway associated with this
         /// VirtualHub</param>
+        /// <param name="p2SVpnGateway">The P2SVpnGateway associated with this
+        /// VirtualHub</param>
         /// <param name="expressRouteGateway">The expressRouteGateway
         /// associated with this VirtualHub</param>
         /// <param name="virtualNetworkConnections">list of all vnet
@@ -56,11 +58,12 @@ namespace Microsoft.Azure.Management.Network.Models
         /// 'Deleting', 'Failed'</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public VirtualHub(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualWan = default(SubResource), SubResource vpnGateway = default(SubResource), SubResource expressRouteGateway = default(SubResource), IList<HubVirtualNetworkConnection> virtualNetworkConnections = default(IList<HubVirtualNetworkConnection>), string addressPrefix = default(string), VirtualHubRouteTable routeTable = default(VirtualHubRouteTable), string provisioningState = default(string), string etag = default(string))
+        public VirtualHub(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualWan = default(SubResource), SubResource vpnGateway = default(SubResource), SubResource p2SVpnGateway = default(SubResource), SubResource expressRouteGateway = default(SubResource), IList<HubVirtualNetworkConnection> virtualNetworkConnections = default(IList<HubVirtualNetworkConnection>), string addressPrefix = default(string), VirtualHubRouteTable routeTable = default(VirtualHubRouteTable), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             VirtualWan = virtualWan;
             VpnGateway = vpnGateway;
+            P2SVpnGateway = p2SVpnGateway;
             ExpressRouteGateway = expressRouteGateway;
             VirtualNetworkConnections = virtualNetworkConnections;
             AddressPrefix = addressPrefix;
@@ -86,6 +89,12 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.vpnGateway")]
         public SubResource VpnGateway { get; set; }
+
+        /// <summary>
+        /// Gets or sets the P2SVpnGateway associated with this VirtualHub
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.p2SVpnGateway")]
+        public SubResource P2SVpnGateway { get; set; }
 
         /// <summary>
         /// Gets or sets the expressRouteGateway associated with this
