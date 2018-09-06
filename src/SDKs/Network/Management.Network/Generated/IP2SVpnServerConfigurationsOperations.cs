@@ -32,7 +32,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='customHeaders'>
@@ -50,7 +50,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<P2SVpnServerConfiguration>> GetWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<P2SVpnServerConfiguration>> GetWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Creates a P2SVpnServerConfiguration to associate with a VirtualWan
         /// if it doesn't exist else updates the existing
@@ -62,7 +62,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='p2SVpnServerConfigurationParameters'>
@@ -84,7 +84,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<P2SVpnServerConfiguration>> CreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<P2SVpnServerConfiguration>> CreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes a P2SVpnServerConfiguration.
         /// </summary>
@@ -94,7 +94,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='customHeaders'>
@@ -109,7 +109,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Retrieves all P2SVpnServerConfigurations for a particular
         /// VirtualWan.
@@ -147,7 +147,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='p2SVpnServerConfigurationParameters'>
@@ -169,7 +169,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<P2SVpnServerConfiguration>> BeginCreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<P2SVpnServerConfiguration>> BeginCreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Deletes a P2SVpnServerConfiguration.
         /// </summary>
@@ -179,7 +179,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='customHeaders'>
@@ -194,7 +194,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse> BeginDeleteWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse> BeginDeleteWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Retrieves all P2SVpnServerConfigurations for a particular
         /// VirtualWan.

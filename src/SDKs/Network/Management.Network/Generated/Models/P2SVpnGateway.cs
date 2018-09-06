@@ -52,11 +52,11 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="vpnClientAddressPool">The reference of the address
         /// space resource which represents Address space for P2S
         /// VpnClient.</param>
-        /// <param name="vpnClientConnectionHealth">Collection of the all P2S
-        /// vpnclients' connection health status.</param>
+        /// <param name="vpnClientConnectionHealth">All P2S vpnclients'
+        /// connection health status.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public P2SVpnGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualHub = default(SubResource), string provisioningState = default(string), int? vpnGatewayScaleUnit = default(int?), P2SVpnServerConfiguration p2SVpnServerConfiguration = default(P2SVpnServerConfiguration), AddressSpace vpnClientAddressPool = default(AddressSpace), IList<VpnClientConnectionHealth> vpnClientConnectionHealth = default(IList<VpnClientConnectionHealth>), string etag = default(string))
+        public P2SVpnGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualHub = default(SubResource), string provisioningState = default(string), int? vpnGatewayScaleUnit = default(int?), P2SVpnServerConfiguration p2SVpnServerConfiguration = default(P2SVpnServerConfiguration), AddressSpace vpnClientAddressPool = default(AddressSpace), VpnClientConnectionHealth vpnClientConnectionHealth = default(VpnClientConnectionHealth), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             VirtualHub = virtualHub;
@@ -108,11 +108,10 @@ namespace Microsoft.Azure.Management.Network.Models
         public AddressSpace VpnClientAddressPool { get; set; }
 
         /// <summary>
-        /// Gets collection of the all P2S vpnclients' connection health
-        /// status.
+        /// Gets all P2S vpnclients' connection health status.
         /// </summary>
         [JsonProperty(PropertyName = "properties.vpnClientConnectionHealth")]
-        public IList<VpnClientConnectionHealth> VpnClientConnectionHealth { get; private set; }
+        public VpnClientConnectionHealth VpnClientConnectionHealth { get; private set; }
 
         /// <summary>
         /// Gets a unique read-only string that changes whenever the resource

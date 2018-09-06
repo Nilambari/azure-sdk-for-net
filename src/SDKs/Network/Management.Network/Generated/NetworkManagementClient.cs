@@ -84,9 +84,24 @@ namespace Microsoft.Azure.Management.Network
         public virtual IApplicationSecurityGroupsOperations ApplicationSecurityGroups { get; private set; }
 
         /// <summary>
+        /// Gets the IAvailableDelegationsOperations.
+        /// </summary>
+        public virtual IAvailableDelegationsOperations AvailableDelegations { get; private set; }
+
+        /// <summary>
+        /// Gets the IAvailableResourceGroupDelegationsOperations.
+        /// </summary>
+        public virtual IAvailableResourceGroupDelegationsOperations AvailableResourceGroupDelegations { get; private set; }
+
+        /// <summary>
         /// Gets the IAzureFirewallsOperations.
         /// </summary>
         public virtual IAzureFirewallsOperations AzureFirewalls { get; private set; }
+
+        /// <summary>
+        /// Gets the IAzureFirewallFqdnTagsOperations.
+        /// </summary>
+        public virtual IAzureFirewallFqdnTagsOperations AzureFirewallFqdnTags { get; private set; }
 
         /// <summary>
         /// Gets the IDdosProtectionPlansOperations.
@@ -132,6 +147,21 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IExpressRouteCrossConnectionPeeringsOperations.
         /// </summary>
         public virtual IExpressRouteCrossConnectionPeeringsOperations ExpressRouteCrossConnectionPeerings { get; private set; }
+
+        /// <summary>
+        /// Gets the IExpressRouteGatewaysOperations.
+        /// </summary>
+        public virtual IExpressRouteGatewaysOperations ExpressRouteGateways { get; private set; }
+
+        /// <summary>
+        /// Gets the IExpressRouteConnectionsOperations.
+        /// </summary>
+        public virtual IExpressRouteConnectionsOperations ExpressRouteConnections { get; private set; }
+
+        /// <summary>
+        /// Gets the IInterfaceEndpointsOperations.
+        /// </summary>
+        public virtual IInterfaceEndpointsOperations InterfaceEndpoints { get; private set; }
 
         /// <summary>
         /// Gets the ILoadBalancersOperations.
@@ -182,6 +212,11 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the INetworkInterfaceLoadBalancersOperations.
         /// </summary>
         public virtual INetworkInterfaceLoadBalancersOperations NetworkInterfaceLoadBalancers { get; private set; }
+
+        /// <summary>
+        /// Gets the INetworkInterfaceTapConfigurationsOperations.
+        /// </summary>
+        public virtual INetworkInterfaceTapConfigurationsOperations NetworkInterfaceTapConfigurations { get; private set; }
 
         /// <summary>
         /// Gets the INetworkSecurityGroupsOperations.
@@ -282,6 +317,11 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IVirtualNetworkPeeringsOperations.
         /// </summary>
         public virtual IVirtualNetworkPeeringsOperations VirtualNetworkPeerings { get; private set; }
+
+        /// <summary>
+        /// Gets the IVirtualNetworkTapsOperations.
+        /// </summary>
+        public virtual IVirtualNetworkTapsOperations VirtualNetworkTaps { get; private set; }
 
         /// <summary>
         /// Gets the IVirtualNetworkGatewaysOperations.
@@ -586,7 +626,10 @@ namespace Microsoft.Azure.Management.Network
         {
             ApplicationGateways = new ApplicationGatewaysOperations(this);
             ApplicationSecurityGroups = new ApplicationSecurityGroupsOperations(this);
+            AvailableDelegations = new AvailableDelegationsOperations(this);
+            AvailableResourceGroupDelegations = new AvailableResourceGroupDelegationsOperations(this);
             AzureFirewalls = new AzureFirewallsOperations(this);
+            AzureFirewallFqdnTags = new AzureFirewallFqdnTagsOperations(this);
             DdosProtectionPlans = new DdosProtectionPlansOperations(this);
             AvailableEndpointServices = new AvailableEndpointServicesOperations(this);
             ExpressRouteCircuitAuthorizations = new ExpressRouteCircuitAuthorizationsOperations(this);
@@ -596,6 +639,9 @@ namespace Microsoft.Azure.Management.Network
             ExpressRouteServiceProviders = new ExpressRouteServiceProvidersOperations(this);
             ExpressRouteCrossConnections = new ExpressRouteCrossConnectionsOperations(this);
             ExpressRouteCrossConnectionPeerings = new ExpressRouteCrossConnectionPeeringsOperations(this);
+            ExpressRouteGateways = new ExpressRouteGatewaysOperations(this);
+            ExpressRouteConnections = new ExpressRouteConnectionsOperations(this);
+            InterfaceEndpoints = new InterfaceEndpointsOperations(this);
             LoadBalancers = new LoadBalancersOperations(this);
             LoadBalancerBackendAddressPools = new LoadBalancerBackendAddressPoolsOperations(this);
             LoadBalancerFrontendIPConfigurations = new LoadBalancerFrontendIPConfigurationsOperations(this);
@@ -606,6 +652,7 @@ namespace Microsoft.Azure.Management.Network
             NetworkInterfaces = new NetworkInterfacesOperations(this);
             NetworkInterfaceIPConfigurations = new NetworkInterfaceIPConfigurationsOperations(this);
             NetworkInterfaceLoadBalancers = new NetworkInterfaceLoadBalancersOperations(this);
+            NetworkInterfaceTapConfigurations = new NetworkInterfaceTapConfigurationsOperations(this);
             NetworkSecurityGroups = new NetworkSecurityGroupsOperations(this);
             SecurityRules = new SecurityRulesOperations(this);
             DefaultSecurityRules = new DefaultSecurityRulesOperations(this);
@@ -626,6 +673,7 @@ namespace Microsoft.Azure.Management.Network
             VirtualNetworks = new VirtualNetworksOperations(this);
             Subnets = new SubnetsOperations(this);
             VirtualNetworkPeerings = new VirtualNetworkPeeringsOperations(this);
+            VirtualNetworkTaps = new VirtualNetworkTapsOperations(this);
             VirtualNetworkGateways = new VirtualNetworkGatewaysOperations(this);
             VirtualNetworkGatewayConnections = new VirtualNetworkGatewayConnectionsOperations(this);
             LocalNetworkGateways = new LocalNetworkGatewaysOperations(this);

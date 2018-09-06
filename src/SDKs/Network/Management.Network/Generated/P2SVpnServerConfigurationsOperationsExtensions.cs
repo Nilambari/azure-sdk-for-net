@@ -33,12 +33,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
-            public static P2SVpnServerConfiguration Get(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName)
+            public static P2SVpnServerConfiguration Get(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName)
             {
-                return operations.GetAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName).GetAwaiter().GetResult();
+                return operations.GetAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -53,15 +53,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<P2SVpnServerConfiguration> GetAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<P2SVpnServerConfiguration> GetAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -80,15 +80,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
             /// <param name='p2SVpnServerConfigurationParameters'>
             /// Parameters supplied to create or Update a P2SVpnServerConfiguration.
             /// </param>
-            public static P2SVpnServerConfiguration CreateOrUpdate(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters)
+            public static P2SVpnServerConfiguration CreateOrUpdate(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters)
             {
-                return operations.CreateOrUpdateAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, p2SVpnServerConfigurationParameters).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, p2SVpnServerConfigurationParameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -104,7 +104,7 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
             /// <param name='p2SVpnServerConfigurationParameters'>
@@ -113,9 +113,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<P2SVpnServerConfiguration> CreateOrUpdateAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<P2SVpnServerConfiguration> CreateOrUpdateAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, p2SVpnServerConfigurationParameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, p2SVpnServerConfigurationParameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -133,12 +133,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
-            public static void Delete(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName)
+            public static void Delete(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName)
             {
-                operations.DeleteAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName).GetAwaiter().GetResult();
+                operations.DeleteAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -153,15 +153,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.DeleteWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -217,15 +217,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
             /// <param name='p2SVpnServerConfigurationParameters'>
             /// Parameters supplied to create or Update a P2SVpnServerConfiguration.
             /// </param>
-            public static P2SVpnServerConfiguration BeginCreateOrUpdate(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters)
+            public static P2SVpnServerConfiguration BeginCreateOrUpdate(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters)
             {
-                return operations.BeginCreateOrUpdateAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, p2SVpnServerConfigurationParameters).GetAwaiter().GetResult();
+                return operations.BeginCreateOrUpdateAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, p2SVpnServerConfigurationParameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -241,7 +241,7 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
             /// <param name='p2SVpnServerConfigurationParameters'>
@@ -250,9 +250,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<P2SVpnServerConfiguration> BeginCreateOrUpdateAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<P2SVpnServerConfiguration> BeginCreateOrUpdateAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, p2SVpnServerConfigurationParameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, p2SVpnServerConfigurationParameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -270,12 +270,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
-            public static void BeginDelete(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName)
+            public static void BeginDelete(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName)
             {
-                operations.BeginDeleteAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName).GetAwaiter().GetResult();
+                operations.BeginDeleteAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -290,15 +290,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualWanName'>
             /// The name of the VirtualWan.
             /// </param>
-            /// <param name='p2sVpnServerConfigurationName'>
+            /// <param name='p2SVpnServerConfigurationName'>
             /// The name of the P2SVpnServerConfiguration.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginDeleteAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginDeleteAsync(this IP2SVpnServerConfigurationsOperations operations, string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.BeginDeleteWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.BeginDeleteWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>

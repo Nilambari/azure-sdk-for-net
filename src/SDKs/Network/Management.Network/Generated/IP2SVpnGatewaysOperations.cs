@@ -58,7 +58,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='gatewayName'>
         /// The name of the gateway.
         /// </param>
-        /// <param name='p2sVpnGatewayParameters'>
+        /// <param name='p2SVpnGatewayParameters'>
         /// Parameters supplied to create or Update a virtual wan p2s vpn
         /// gateway.
         /// </param>
@@ -77,7 +77,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<P2SVpnGateway>> CreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string gatewayName, P2SVpnGateway p2sVpnGatewayParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<P2SVpnGateway>> CreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string gatewayName, P2SVpnGateway p2SVpnGatewayParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Updates virtual wan p2s vpn gateway tags.
         /// </summary>
@@ -209,7 +209,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='gatewayName'>
         /// The name of the gateway.
         /// </param>
-        /// <param name='p2sVpnGatewayParameters'>
+        /// <param name='p2SVpnGatewayParameters'>
         /// Parameters supplied to create or Update a virtual wan p2s vpn
         /// gateway.
         /// </param>
@@ -228,7 +228,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        Task<AzureOperationResponse<P2SVpnGateway>> BeginCreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string gatewayName, P2SVpnGateway p2sVpnGatewayParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<AzureOperationResponse<P2SVpnGateway>> BeginCreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string gatewayName, P2SVpnGateway p2SVpnGatewayParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Updates virtual wan p2s vpn gateway tags.
         /// </summary>

@@ -81,9 +81,24 @@ namespace Microsoft.Azure.Management.Network
         IApplicationSecurityGroupsOperations ApplicationSecurityGroups { get; }
 
         /// <summary>
+        /// Gets the IAvailableDelegationsOperations.
+        /// </summary>
+        IAvailableDelegationsOperations AvailableDelegations { get; }
+
+        /// <summary>
+        /// Gets the IAvailableResourceGroupDelegationsOperations.
+        /// </summary>
+        IAvailableResourceGroupDelegationsOperations AvailableResourceGroupDelegations { get; }
+
+        /// <summary>
         /// Gets the IAzureFirewallsOperations.
         /// </summary>
         IAzureFirewallsOperations AzureFirewalls { get; }
+
+        /// <summary>
+        /// Gets the IAzureFirewallFqdnTagsOperations.
+        /// </summary>
+        IAzureFirewallFqdnTagsOperations AzureFirewallFqdnTags { get; }
 
         /// <summary>
         /// Gets the IDdosProtectionPlansOperations.
@@ -129,6 +144,21 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IExpressRouteCrossConnectionPeeringsOperations.
         /// </summary>
         IExpressRouteCrossConnectionPeeringsOperations ExpressRouteCrossConnectionPeerings { get; }
+
+        /// <summary>
+        /// Gets the IExpressRouteGatewaysOperations.
+        /// </summary>
+        IExpressRouteGatewaysOperations ExpressRouteGateways { get; }
+
+        /// <summary>
+        /// Gets the IExpressRouteConnectionsOperations.
+        /// </summary>
+        IExpressRouteConnectionsOperations ExpressRouteConnections { get; }
+
+        /// <summary>
+        /// Gets the IInterfaceEndpointsOperations.
+        /// </summary>
+        IInterfaceEndpointsOperations InterfaceEndpoints { get; }
 
         /// <summary>
         /// Gets the ILoadBalancersOperations.
@@ -179,6 +209,11 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the INetworkInterfaceLoadBalancersOperations.
         /// </summary>
         INetworkInterfaceLoadBalancersOperations NetworkInterfaceLoadBalancers { get; }
+
+        /// <summary>
+        /// Gets the INetworkInterfaceTapConfigurationsOperations.
+        /// </summary>
+        INetworkInterfaceTapConfigurationsOperations NetworkInterfaceTapConfigurations { get; }
 
         /// <summary>
         /// Gets the INetworkSecurityGroupsOperations.
@@ -279,6 +314,11 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IVirtualNetworkPeeringsOperations.
         /// </summary>
         IVirtualNetworkPeeringsOperations VirtualNetworkPeerings { get; }
+
+        /// <summary>
+        /// Gets the IVirtualNetworkTapsOperations.
+        /// </summary>
+        IVirtualNetworkTapsOperations VirtualNetworkTaps { get; }
 
         /// <summary>
         /// Gets the IVirtualNetworkGatewaysOperations.

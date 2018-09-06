@@ -59,7 +59,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='customHeaders'>
@@ -83,7 +83,7 @@ namespace Microsoft.Azure.Management.Network
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<P2SVpnServerConfiguration>> GetWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<P2SVpnServerConfiguration>> GetWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -97,9 +97,9 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "virtualWanName");
             }
-            if (p2sVpnServerConfigurationName == null)
+            if (p2SVpnServerConfigurationName == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "p2sVpnServerConfigurationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "p2SVpnServerConfigurationName");
             }
             string apiVersion = "2018-08-01";
             // Tracing
@@ -111,7 +111,7 @@ namespace Microsoft.Azure.Management.Network
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
                 tracingParameters.Add("virtualWanName", virtualWanName);
-                tracingParameters.Add("p2sVpnServerConfigurationName", p2sVpnServerConfigurationName);
+                tracingParameters.Add("p2SVpnServerConfigurationName", p2SVpnServerConfigurationName);
                 tracingParameters.Add("apiVersion", apiVersion);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "Get", tracingParameters);
@@ -122,7 +122,7 @@ namespace Microsoft.Azure.Management.Network
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
             _url = _url.Replace("{virtualWanName}", System.Uri.EscapeDataString(virtualWanName));
-            _url = _url.Replace("{p2sVpnServerConfigurationName}", System.Uri.EscapeDataString(p2sVpnServerConfigurationName));
+            _url = _url.Replace("{p2SVpnServerConfigurationName}", System.Uri.EscapeDataString(p2SVpnServerConfigurationName));
             List<string> _queryParameters = new List<string>();
             if (apiVersion != null)
             {
@@ -258,7 +258,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='p2SVpnServerConfigurationParameters'>
@@ -270,10 +270,10 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse<P2SVpnServerConfiguration>> CreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<P2SVpnServerConfiguration>> CreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send Request
-            AzureOperationResponse<P2SVpnServerConfiguration> _response = await BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, p2SVpnServerConfigurationParameters, customHeaders, cancellationToken).ConfigureAwait(false);
+            AzureOperationResponse<P2SVpnServerConfiguration> _response = await BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, p2SVpnServerConfigurationParameters, customHeaders, cancellationToken).ConfigureAwait(false);
             return await Client.GetPutOrPatchOperationResultAsync(_response, customHeaders, cancellationToken).ConfigureAwait(false);
         }
 
@@ -286,7 +286,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='customHeaders'>
@@ -295,10 +295,10 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> DeleteWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send request
-            AzureOperationResponse _response = await BeginDeleteWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2sVpnServerConfigurationName, customHeaders, cancellationToken).ConfigureAwait(false);
+            AzureOperationResponse _response = await BeginDeleteWithHttpMessagesAsync(resourceGroupName, virtualWanName, p2SVpnServerConfigurationName, customHeaders, cancellationToken).ConfigureAwait(false);
             return await Client.GetPostOrDeleteOperationResultAsync(_response, customHeaders, cancellationToken).ConfigureAwait(false);
         }
 
@@ -501,7 +501,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='p2SVpnServerConfigurationParameters'>
@@ -528,7 +528,7 @@ namespace Microsoft.Azure.Management.Network
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<P2SVpnServerConfiguration>> BeginCreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<P2SVpnServerConfiguration>> BeginCreateOrUpdateWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, P2SVpnServerConfiguration p2SVpnServerConfigurationParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -542,9 +542,9 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "virtualWanName");
             }
-            if (p2sVpnServerConfigurationName == null)
+            if (p2SVpnServerConfigurationName == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "p2sVpnServerConfigurationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "p2SVpnServerConfigurationName");
             }
             if (p2SVpnServerConfigurationParameters == null)
             {
@@ -560,7 +560,7 @@ namespace Microsoft.Azure.Management.Network
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
                 tracingParameters.Add("virtualWanName", virtualWanName);
-                tracingParameters.Add("p2sVpnServerConfigurationName", p2sVpnServerConfigurationName);
+                tracingParameters.Add("p2SVpnServerConfigurationName", p2SVpnServerConfigurationName);
                 tracingParameters.Add("apiVersion", apiVersion);
                 tracingParameters.Add("p2SVpnServerConfigurationParameters", p2SVpnServerConfigurationParameters);
                 tracingParameters.Add("cancellationToken", cancellationToken);
@@ -572,7 +572,7 @@ namespace Microsoft.Azure.Management.Network
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
             _url = _url.Replace("{virtualWanName}", System.Uri.EscapeDataString(virtualWanName));
-            _url = _url.Replace("{p2sVpnServerConfigurationName}", System.Uri.EscapeDataString(p2sVpnServerConfigurationName));
+            _url = _url.Replace("{p2SVpnServerConfigurationName}", System.Uri.EscapeDataString(p2SVpnServerConfigurationName));
             List<string> _queryParameters = new List<string>();
             if (apiVersion != null)
             {
@@ -731,7 +731,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualWanName'>
         /// The name of the VirtualWan.
         /// </param>
-        /// <param name='p2sVpnServerConfigurationName'>
+        /// <param name='p2SVpnServerConfigurationName'>
         /// The name of the P2SVpnServerConfiguration.
         /// </param>
         /// <param name='customHeaders'>
@@ -752,7 +752,7 @@ namespace Microsoft.Azure.Management.Network
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse> BeginDeleteWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2sVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse> BeginDeleteWithHttpMessagesAsync(string resourceGroupName, string virtualWanName, string p2SVpnServerConfigurationName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -766,9 +766,9 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "virtualWanName");
             }
-            if (p2sVpnServerConfigurationName == null)
+            if (p2SVpnServerConfigurationName == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "p2sVpnServerConfigurationName");
+                throw new ValidationException(ValidationRules.CannotBeNull, "p2SVpnServerConfigurationName");
             }
             string apiVersion = "2018-08-01";
             // Tracing
@@ -780,7 +780,7 @@ namespace Microsoft.Azure.Management.Network
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
                 tracingParameters.Add("virtualWanName", virtualWanName);
-                tracingParameters.Add("p2sVpnServerConfigurationName", p2sVpnServerConfigurationName);
+                tracingParameters.Add("p2SVpnServerConfigurationName", p2SVpnServerConfigurationName);
                 tracingParameters.Add("apiVersion", apiVersion);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "BeginDelete", tracingParameters);
@@ -791,7 +791,7 @@ namespace Microsoft.Azure.Management.Network
             _url = _url.Replace("{subscriptionId}", System.Uri.EscapeDataString(Client.SubscriptionId));
             _url = _url.Replace("{resourceGroupName}", System.Uri.EscapeDataString(resourceGroupName));
             _url = _url.Replace("{virtualWanName}", System.Uri.EscapeDataString(virtualWanName));
-            _url = _url.Replace("{p2sVpnServerConfigurationName}", System.Uri.EscapeDataString(p2sVpnServerConfigurationName));
+            _url = _url.Replace("{p2SVpnServerConfigurationName}", System.Uri.EscapeDataString(p2SVpnServerConfigurationName));
             List<string> _queryParameters = new List<string>();
             if (apiVersion != null)
             {

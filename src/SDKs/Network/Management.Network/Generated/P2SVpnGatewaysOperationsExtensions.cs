@@ -74,12 +74,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='gatewayName'>
             /// The name of the gateway.
             /// </param>
-            /// <param name='p2sVpnGatewayParameters'>
+            /// <param name='p2SVpnGatewayParameters'>
             /// Parameters supplied to create or Update a virtual wan p2s vpn gateway.
             /// </param>
-            public static P2SVpnGateway CreateOrUpdate(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnGateway p2sVpnGatewayParameters)
+            public static P2SVpnGateway CreateOrUpdate(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnGateway p2SVpnGatewayParameters)
             {
-                return operations.CreateOrUpdateAsync(resourceGroupName, gatewayName, p2sVpnGatewayParameters).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(resourceGroupName, gatewayName, p2SVpnGatewayParameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -95,15 +95,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='gatewayName'>
             /// The name of the gateway.
             /// </param>
-            /// <param name='p2sVpnGatewayParameters'>
+            /// <param name='p2SVpnGatewayParameters'>
             /// Parameters supplied to create or Update a virtual wan p2s vpn gateway.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<P2SVpnGateway> CreateOrUpdateAsync(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnGateway p2sVpnGatewayParameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<P2SVpnGateway> CreateOrUpdateAsync(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnGateway p2SVpnGatewayParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName, gatewayName, p2sVpnGatewayParameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName, gatewayName, p2SVpnGatewayParameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -317,12 +317,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='gatewayName'>
             /// The name of the gateway.
             /// </param>
-            /// <param name='p2sVpnGatewayParameters'>
+            /// <param name='p2SVpnGatewayParameters'>
             /// Parameters supplied to create or Update a virtual wan p2s vpn gateway.
             /// </param>
-            public static P2SVpnGateway BeginCreateOrUpdate(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnGateway p2sVpnGatewayParameters)
+            public static P2SVpnGateway BeginCreateOrUpdate(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnGateway p2SVpnGatewayParameters)
             {
-                return operations.BeginCreateOrUpdateAsync(resourceGroupName, gatewayName, p2sVpnGatewayParameters).GetAwaiter().GetResult();
+                return operations.BeginCreateOrUpdateAsync(resourceGroupName, gatewayName, p2SVpnGatewayParameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -338,15 +338,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='gatewayName'>
             /// The name of the gateway.
             /// </param>
-            /// <param name='p2sVpnGatewayParameters'>
+            /// <param name='p2SVpnGatewayParameters'>
             /// Parameters supplied to create or Update a virtual wan p2s vpn gateway.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<P2SVpnGateway> BeginCreateOrUpdateAsync(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnGateway p2sVpnGatewayParameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<P2SVpnGateway> BeginCreateOrUpdateAsync(this IP2SVpnGatewaysOperations operations, string resourceGroupName, string gatewayName, P2SVpnGateway p2SVpnGatewayParameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, gatewayName, p2sVpnGatewayParameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, gatewayName, p2SVpnGatewayParameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
