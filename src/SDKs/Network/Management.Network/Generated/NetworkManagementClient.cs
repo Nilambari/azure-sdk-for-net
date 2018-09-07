@@ -219,6 +219,11 @@ namespace Microsoft.Azure.Management.Network
         public virtual INetworkInterfaceTapConfigurationsOperations NetworkInterfaceTapConfigurations { get; private set; }
 
         /// <summary>
+        /// Gets the INetworkProfilesOperations.
+        /// </summary>
+        public virtual INetworkProfilesOperations NetworkProfiles { get; private set; }
+
+        /// <summary>
         /// Gets the INetworkSecurityGroupsOperations.
         /// </summary>
         public virtual INetworkSecurityGroupsOperations NetworkSecurityGroups { get; private set; }
@@ -653,6 +658,7 @@ namespace Microsoft.Azure.Management.Network
             NetworkInterfaceIPConfigurations = new NetworkInterfaceIPConfigurationsOperations(this);
             NetworkInterfaceLoadBalancers = new NetworkInterfaceLoadBalancersOperations(this);
             NetworkInterfaceTapConfigurations = new NetworkInterfaceTapConfigurationsOperations(this);
+            NetworkProfiles = new NetworkProfilesOperations(this);
             NetworkSecurityGroups = new NetworkSecurityGroupsOperations(this);
             SecurityRules = new SecurityRulesOperations(this);
             DefaultSecurityRules = new DefaultSecurityRulesOperations(this);

@@ -56,6 +56,7 @@ namespace Microsoft.Azure.Management.Network
                 new Tuple<string, string, string>("Network", "NetworkInterfaceLoadBalancers", "2018-08-01"),
                 new Tuple<string, string, string>("Network", "NetworkInterfaceTapConfigurations", "2018-08-01"),
                 new Tuple<string, string, string>("Network", "NetworkInterfaces", "2018-08-01"),
+                new Tuple<string, string, string>("Network", "NetworkProfiles", "2018-08-01"),
                 new Tuple<string, string, string>("Network", "NetworkSecurityGroups", "2018-08-01"),
                 new Tuple<string, string, string>("Network", "NetworkWatchers", "2018-08-01"),
                 new Tuple<string, string, string>("Network", "Operations", "2018-08-01"),

@@ -216,6 +216,11 @@ namespace Microsoft.Azure.Management.Network
         INetworkInterfaceTapConfigurationsOperations NetworkInterfaceTapConfigurations { get; }
 
         /// <summary>
+        /// Gets the INetworkProfilesOperations.
+        /// </summary>
+        INetworkProfilesOperations NetworkProfiles { get; }
+
+        /// <summary>
         /// Gets the INetworkSecurityGroupsOperations.
         /// </summary>
         INetworkSecurityGroupsOperations NetworkSecurityGroups { get; }

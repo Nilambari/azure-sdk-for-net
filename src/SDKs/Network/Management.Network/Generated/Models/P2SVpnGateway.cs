@@ -56,7 +56,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// connection health status.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public P2SVpnGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualHub = default(SubResource), string provisioningState = default(string), int? vpnGatewayScaleUnit = default(int?), P2SVpnServerConfiguration p2SVpnServerConfiguration = default(P2SVpnServerConfiguration), AddressSpace vpnClientAddressPool = default(AddressSpace), VpnClientConnectionHealth vpnClientConnectionHealth = default(VpnClientConnectionHealth), string etag = default(string))
+        public P2SVpnGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualHub = default(SubResource), string provisioningState = default(string), int? vpnGatewayScaleUnit = default(int?), SubResource p2SVpnServerConfiguration = default(SubResource), AddressSpace vpnClientAddressPool = default(AddressSpace), VpnClientConnectionHealth vpnClientConnectionHealth = default(VpnClientConnectionHealth), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             VirtualHub = virtualHub;
@@ -98,7 +98,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// p2sVpnGateway is attached to.
         /// </summary>
         [JsonProperty(PropertyName = "properties.p2SVpnServerConfiguration")]
-        public P2SVpnServerConfiguration P2SVpnServerConfiguration { get; set; }
+        public SubResource P2SVpnServerConfiguration { get; set; }
 
         /// <summary>
         /// Gets or sets the reference of the address space resource which
