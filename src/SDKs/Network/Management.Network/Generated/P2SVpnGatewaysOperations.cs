@@ -274,7 +274,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='gatewayName'>
         /// The name of the gateway.
         /// </param>
-        /// <param name='p2sVpnGatewayParameters'>
+        /// <param name='p2SVpnGatewayParameters'>
         /// Parameters supplied to update a virtual wan p2s vpn gateway tags.
         /// </param>
         /// <param name='customHeaders'>
@@ -283,10 +283,10 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse<P2SVpnGateway>> UpdateTagsWithHttpMessagesAsync(string resourceGroupName, string gatewayName, TagsObject p2sVpnGatewayParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<P2SVpnGateway>> UpdateTagsWithHttpMessagesAsync(string resourceGroupName, string gatewayName, TagsObject p2SVpnGatewayParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send Request
-            AzureOperationResponse<P2SVpnGateway> _response = await BeginUpdateTagsWithHttpMessagesAsync(resourceGroupName, gatewayName, p2sVpnGatewayParameters, customHeaders, cancellationToken).ConfigureAwait(false);
+            AzureOperationResponse<P2SVpnGateway> _response = await BeginUpdateTagsWithHttpMessagesAsync(resourceGroupName, gatewayName, p2SVpnGatewayParameters, customHeaders, cancellationToken).ConfigureAwait(false);
             return await Client.GetPutOrPatchOperationResultAsync(_response, customHeaders, cancellationToken).ConfigureAwait(false);
         }
 
@@ -921,7 +921,7 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='gatewayName'>
         /// The name of the gateway.
         /// </param>
-        /// <param name='p2sVpnGatewayParameters'>
+        /// <param name='p2SVpnGatewayParameters'>
         /// Parameters supplied to update a virtual wan p2s vpn gateway tags.
         /// </param>
         /// <param name='customHeaders'>
@@ -945,7 +945,7 @@ namespace Microsoft.Azure.Management.Network
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<P2SVpnGateway>> BeginUpdateTagsWithHttpMessagesAsync(string resourceGroupName, string gatewayName, TagsObject p2sVpnGatewayParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<P2SVpnGateway>> BeginUpdateTagsWithHttpMessagesAsync(string resourceGroupName, string gatewayName, TagsObject p2SVpnGatewayParameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (Client.SubscriptionId == null)
             {
@@ -959,9 +959,9 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "gatewayName");
             }
-            if (p2sVpnGatewayParameters == null)
+            if (p2SVpnGatewayParameters == null)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "p2sVpnGatewayParameters");
+                throw new ValidationException(ValidationRules.CannotBeNull, "p2SVpnGatewayParameters");
             }
             string apiVersion = "2018-08-01";
             // Tracing
@@ -974,7 +974,7 @@ namespace Microsoft.Azure.Management.Network
                 tracingParameters.Add("resourceGroupName", resourceGroupName);
                 tracingParameters.Add("gatewayName", gatewayName);
                 tracingParameters.Add("apiVersion", apiVersion);
-                tracingParameters.Add("p2sVpnGatewayParameters", p2sVpnGatewayParameters);
+                tracingParameters.Add("p2SVpnGatewayParameters", p2SVpnGatewayParameters);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "BeginUpdateTags", tracingParameters);
             }
@@ -1027,9 +1027,9 @@ namespace Microsoft.Azure.Management.Network
 
             // Serialize Request
             string _requestContent = null;
-            if(p2sVpnGatewayParameters != null)
+            if(p2SVpnGatewayParameters != null)
             {
-                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(p2sVpnGatewayParameters, Client.SerializationSettings);
+                _requestContent = Rest.Serialization.SafeJsonConvert.SerializeObject(p2SVpnGatewayParameters, Client.SerializationSettings);
                 _httpRequest.Content = new StringContent(_requestContent, System.Text.Encoding.UTF8);
                 _httpRequest.Content.Headers.ContentType =System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
             }

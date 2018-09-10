@@ -41,8 +41,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="connectionStatus">The connection status. Possible
         /// values include: 'Unknown', 'Connecting', 'Connected',
         /// 'NotConnected'</param>
-        /// <param name="connectionProtocol">Connection protocol used for this
-        /// connection. Possible values include: 'IKEv2', 'IKEv1'</param>
+        /// <param name="vpnConnectionProtocolType">Connection protocol used
+        /// for this connection. Possible values include: 'IKEv2',
+        /// 'IKEv1'</param>
         /// <param name="ingressBytesTransferred">Ingress bytes
         /// transferred.</param>
         /// <param name="egressBytesTransferred">Egress bytes
@@ -64,13 +65,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// resource.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public VpnConnection(string id = default(string), SubResource remoteVpnSite = default(SubResource), int? routingWeight = default(int?), string connectionStatus = default(string), string connectionProtocol = default(string), long? ingressBytesTransferred = default(long?), long? egressBytesTransferred = default(long?), int? connectionBandwidth = default(int?), string sharedKey = default(string), bool? enableBgp = default(bool?), IList<IpsecPolicy> ipsecPolicies = default(IList<IpsecPolicy>), bool? enableRateLimiting = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string name = default(string), string etag = default(string))
+        public VpnConnection(string id = default(string), SubResource remoteVpnSite = default(SubResource), int? routingWeight = default(int?), string connectionStatus = default(string), string vpnConnectionProtocolType = default(string), long? ingressBytesTransferred = default(long?), long? egressBytesTransferred = default(long?), int? connectionBandwidth = default(int?), string sharedKey = default(string), bool? enableBgp = default(bool?), IList<IpsecPolicy> ipsecPolicies = default(IList<IpsecPolicy>), bool? enableRateLimiting = default(bool?), bool? enableInternetSecurity = default(bool?), string provisioningState = default(string), string name = default(string), string etag = default(string))
             : base(id)
         {
             RemoteVpnSite = remoteVpnSite;
             RoutingWeight = routingWeight;
             ConnectionStatus = connectionStatus;
-            ConnectionProtocol = connectionProtocol;
+            VpnConnectionProtocolType = vpnConnectionProtocolType;
             IngressBytesTransferred = ingressBytesTransferred;
             EgressBytesTransferred = egressBytesTransferred;
             ConnectionBandwidth = connectionBandwidth;
@@ -113,8 +114,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets or sets connection protocol used for this connection. Possible
         /// values include: 'IKEv2', 'IKEv1'
         /// </summary>
-        [JsonProperty(PropertyName = "properties.connectionProtocol")]
-        public string ConnectionProtocol { get; set; }
+        [JsonProperty(PropertyName = "properties.vpnConnectionProtocolType")]
+        public string VpnConnectionProtocolType { get; set; }
 
         /// <summary>
         /// Gets ingress bytes transferred.
