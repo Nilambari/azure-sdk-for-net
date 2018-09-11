@@ -23,12 +23,12 @@ namespace Microsoft.Azure.Management.Network
     using System.Threading.Tasks;
 
     /// <summary>
-    /// VirtualWANsOperations operations.
+    /// VirtualWansOperations operations.
     /// </summary>
-    internal partial class VirtualWANsOperations : IServiceOperations<NetworkManagementClient>, IVirtualWANsOperations
+    internal partial class VirtualWansOperations : IServiceOperations<NetworkManagementClient>, IVirtualWansOperations
     {
         /// <summary>
-        /// Initializes a new instance of the VirtualWANsOperations class.
+        /// Initializes a new instance of the VirtualWansOperations class.
         /// </summary>
         /// <param name='client'>
         /// Reference to the service client.
@@ -36,7 +36,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        internal VirtualWANsOperations(NetworkManagementClient client)
+        internal VirtualWansOperations(NetworkManagementClient client)
         {
             if (client == null)
             {

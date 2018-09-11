@@ -19,9 +19,9 @@ namespace Microsoft.Azure.Management.Network
     using System.Threading.Tasks;
 
     /// <summary>
-    /// P2SVpnServerConfigurationsOperations operations.
+    /// P2sVpnServerConfigurationsOperations operations.
     /// </summary>
-    public partial interface IP2SVpnServerConfigurationsOperations
+    public partial interface IP2sVpnServerConfigurationsOperations
     {
         /// <summary>
         /// Retrieves the details of a P2SVpnServerConfiguration.

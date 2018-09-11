@@ -47,6 +47,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// endpoint to which the network interface is linked.</param>
         /// <param name="ipConfigurations">A list of IPConfigurations of the
         /// network interface.</param>
+        /// <param name="tapConfigurations">A list of TapConfigurations of the
+        /// network interface.</param>
         /// <param name="dnsSettings">The DNS settings in network
         /// interface.</param>
         /// <param name="macAddress">The MAC address of the network
@@ -68,13 +70,14 @@ namespace Microsoft.Azure.Management.Network.Models
         /// and 'Failed'.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
-        public NetworkInterface(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualMachine = default(SubResource), NetworkSecurityGroup networkSecurityGroup = default(NetworkSecurityGroup), InterfaceEndpoint interfaceEndpoint = default(InterfaceEndpoint), IList<NetworkInterfaceIPConfiguration> ipConfigurations = default(IList<NetworkInterfaceIPConfiguration>), NetworkInterfaceDnsSettings dnsSettings = default(NetworkInterfaceDnsSettings), string macAddress = default(string), bool? primary = default(bool?), bool? enableAcceleratedNetworking = default(bool?), bool? enableIPForwarding = default(bool?), IList<string> hostedWorkloads = default(IList<string>), string linkedResourceType = default(string), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string))
+        public NetworkInterface(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), SubResource virtualMachine = default(SubResource), NetworkSecurityGroup networkSecurityGroup = default(NetworkSecurityGroup), InterfaceEndpoint interfaceEndpoint = default(InterfaceEndpoint), IList<NetworkInterfaceIPConfiguration> ipConfigurations = default(IList<NetworkInterfaceIPConfiguration>), IList<NetworkInterfaceTapConfiguration> tapConfigurations = default(IList<NetworkInterfaceTapConfiguration>), NetworkInterfaceDnsSettings dnsSettings = default(NetworkInterfaceDnsSettings), string macAddress = default(string), bool? primary = default(bool?), bool? enableAcceleratedNetworking = default(bool?), bool? enableIPForwarding = default(bool?), IList<string> hostedWorkloads = default(IList<string>), string linkedResourceType = default(string), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             VirtualMachine = virtualMachine;
             NetworkSecurityGroup = networkSecurityGroup;
             InterfaceEndpoint = interfaceEndpoint;
             IpConfigurations = ipConfigurations;
+            TapConfigurations = tapConfigurations;
             DnsSettings = dnsSettings;
             MacAddress = macAddress;
             Primary = primary;
@@ -117,6 +120,12 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.ipConfigurations")]
         public IList<NetworkInterfaceIPConfiguration> IpConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets a list of TapConfigurations of the network interface.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.tapConfigurations")]
+        public IList<NetworkInterfaceTapConfiguration> TapConfigurations { get; set; }
 
         /// <summary>
         /// Gets or sets the DNS settings in network interface.

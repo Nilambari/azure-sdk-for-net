@@ -344,9 +344,9 @@ namespace Microsoft.Azure.Management.Network
         public virtual ILocalNetworkGatewaysOperations LocalNetworkGateways { get; private set; }
 
         /// <summary>
-        /// Gets the IVirtualWANsOperations.
+        /// Gets the IVirtualWansOperations.
         /// </summary>
-        public virtual IVirtualWANsOperations VirtualWANs { get; private set; }
+        public virtual IVirtualWansOperations VirtualWans { get; private set; }
 
         /// <summary>
         /// Gets the IVpnSitesOperations.
@@ -379,14 +379,14 @@ namespace Microsoft.Azure.Management.Network
         public virtual IVpnConnectionsOperations VpnConnections { get; private set; }
 
         /// <summary>
-        /// Gets the IP2SVpnServerConfigurationsOperations.
+        /// Gets the IP2sVpnServerConfigurationsOperations.
         /// </summary>
-        public virtual IP2SVpnServerConfigurationsOperations P2SVpnServerConfigurations { get; private set; }
+        public virtual IP2sVpnServerConfigurationsOperations P2sVpnServerConfigurations { get; private set; }
 
         /// <summary>
-        /// Gets the IP2SVpnGatewaysOperations.
+        /// Gets the IP2sVpnGatewaysOperations.
         /// </summary>
-        public virtual IP2SVpnGatewaysOperations P2SVpnGateways { get; private set; }
+        public virtual IP2sVpnGatewaysOperations P2sVpnGateways { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the NetworkManagementClient class.
@@ -683,15 +683,15 @@ namespace Microsoft.Azure.Management.Network
             VirtualNetworkGateways = new VirtualNetworkGatewaysOperations(this);
             VirtualNetworkGatewayConnections = new VirtualNetworkGatewayConnectionsOperations(this);
             LocalNetworkGateways = new LocalNetworkGatewaysOperations(this);
-            VirtualWANs = new VirtualWANsOperations(this);
+            VirtualWans = new VirtualWansOperations(this);
             VpnSites = new VpnSitesOperations(this);
             VpnSitesConfiguration = new VpnSitesConfigurationOperations(this);
             VirtualHubs = new VirtualHubsOperations(this);
             HubVirtualNetworkConnections = new HubVirtualNetworkConnectionsOperations(this);
             VpnGateways = new VpnGatewaysOperations(this);
             VpnConnections = new VpnConnectionsOperations(this);
-            P2SVpnServerConfigurations = new P2SVpnServerConfigurationsOperations(this);
-            P2SVpnGateways = new P2SVpnGatewaysOperations(this);
+            P2sVpnServerConfigurations = new P2sVpnServerConfigurationsOperations(this);
+            P2sVpnGateways = new P2sVpnGatewaysOperations(this);
             BaseUri = new System.Uri("https://management.azure.com");
             AcceptLanguage = "en-US";
             LongRunningOperationRetryTimeout = 30;

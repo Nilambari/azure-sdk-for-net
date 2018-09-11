@@ -19,9 +19,9 @@ namespace Microsoft.Azure.Management.Network
     using System.Threading.Tasks;
 
     /// <summary>
-    /// P2SVpnGatewaysOperations operations.
+    /// P2sVpnGatewaysOperations operations.
     /// </summary>
-    public partial interface IP2SVpnGatewaysOperations
+    public partial interface IP2sVpnGatewaysOperations
     {
         /// <summary>
         /// Retrieves the details of a virtual wan p2s vpn gateway.

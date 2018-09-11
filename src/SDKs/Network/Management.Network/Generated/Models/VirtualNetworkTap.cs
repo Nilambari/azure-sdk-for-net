@@ -69,11 +69,11 @@ namespace Microsoft.Azure.Management.Network.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets specifies the list of resource IDs for the network
-        /// interface IP configuration that needs to be tapped.
+        /// Gets specifies the list of resource IDs for the network interface
+        /// IP configuration that needs to be tapped.
         /// </summary>
         [JsonProperty(PropertyName = "properties.networkInterfaceTapConfigurations")]
-        public IList<NetworkInterfaceTapConfiguration> NetworkInterfaceTapConfigurations { get; set; }
+        public IList<NetworkInterfaceTapConfiguration> NetworkInterfaceTapConfigurations { get; private set; }
 
         /// <summary>
         /// Gets or sets the reference to the private IP Address of the

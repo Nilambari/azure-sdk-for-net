@@ -23,12 +23,12 @@ namespace Microsoft.Azure.Management.Network
     using System.Threading.Tasks;
 
     /// <summary>
-    /// P2SVpnGatewaysOperations operations.
+    /// P2sVpnGatewaysOperations operations.
     /// </summary>
-    internal partial class P2SVpnGatewaysOperations : IServiceOperations<NetworkManagementClient>, IP2SVpnGatewaysOperations
+    internal partial class P2sVpnGatewaysOperations : IServiceOperations<NetworkManagementClient>, IP2sVpnGatewaysOperations
     {
         /// <summary>
-        /// Initializes a new instance of the P2SVpnGatewaysOperations class.
+        /// Initializes a new instance of the P2sVpnGatewaysOperations class.
         /// </summary>
         /// <param name='client'>
         /// Reference to the service client.
@@ -36,7 +36,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        internal P2SVpnGatewaysOperations(NetworkManagementClient client)
+        internal P2sVpnGatewaysOperations(NetworkManagementClient client)
         {
             if (client == null)
             {

@@ -51,8 +51,12 @@ namespace Microsoft.Azure.Management.Network.Models
         /// interface endpoints </param>
         /// <param name="ipConfigurations">Gets an array of references to the
         /// network interface IP configurations using subnet.</param>
+        /// <param name="ipConfigurationProfiles">Array of IP configuration
+        /// profiles which reference this subnet.</param>
         /// <param name="resourceNavigationLinks">Gets an array of references
         /// to the external resources using subnet.</param>
+        /// <param name="serviceAssociationLinks">Gets an array of references
+        /// to services injecting into this subnet.</param>
         /// <param name="delegations">Gets an array of references to the
         /// delegations on the subnet.</param>
         /// <param name="purpose">A read-only string identifying the intention
@@ -65,7 +69,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// resource.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
-        public Subnet(string id = default(string), string addressPrefix = default(string), IList<string> addressPrefixes = default(IList<string>), NetworkSecurityGroup networkSecurityGroup = default(NetworkSecurityGroup), RouteTable routeTable = default(RouteTable), IList<ServiceEndpointPropertiesFormat> serviceEndpoints = default(IList<ServiceEndpointPropertiesFormat>), IList<ServiceEndpointPolicy> serviceEndpointPolicies = default(IList<ServiceEndpointPolicy>), IList<SubResource> interfaceEndpoints = default(IList<SubResource>), IList<IPConfiguration> ipConfigurations = default(IList<IPConfiguration>), IList<ResourceNavigationLink> resourceNavigationLinks = default(IList<ResourceNavigationLink>), IList<Delegation> delegations = default(IList<Delegation>), string purpose = default(string), string provisioningState = default(string), string name = default(string), string etag = default(string))
+        public Subnet(string id = default(string), string addressPrefix = default(string), IList<string> addressPrefixes = default(IList<string>), NetworkSecurityGroup networkSecurityGroup = default(NetworkSecurityGroup), RouteTable routeTable = default(RouteTable), IList<ServiceEndpointPropertiesFormat> serviceEndpoints = default(IList<ServiceEndpointPropertiesFormat>), IList<ServiceEndpointPolicy> serviceEndpointPolicies = default(IList<ServiceEndpointPolicy>), IList<SubResource> interfaceEndpoints = default(IList<SubResource>), IList<IPConfiguration> ipConfigurations = default(IList<IPConfiguration>), IList<IPConfigurationProfile> ipConfigurationProfiles = default(IList<IPConfigurationProfile>), IList<ResourceNavigationLink> resourceNavigationLinks = default(IList<ResourceNavigationLink>), IList<ServiceAssociationLink> serviceAssociationLinks = default(IList<ServiceAssociationLink>), IList<Delegation> delegations = default(IList<Delegation>), string purpose = default(string), string provisioningState = default(string), string name = default(string), string etag = default(string))
             : base(id)
         {
             AddressPrefix = addressPrefix;
@@ -76,7 +80,9 @@ namespace Microsoft.Azure.Management.Network.Models
             ServiceEndpointPolicies = serviceEndpointPolicies;
             InterfaceEndpoints = interfaceEndpoints;
             IpConfigurations = ipConfigurations;
+            IpConfigurationProfiles = ipConfigurationProfiles;
             ResourceNavigationLinks = resourceNavigationLinks;
+            ServiceAssociationLinks = serviceAssociationLinks;
             Delegations = delegations;
             Purpose = purpose;
             ProvisioningState = provisioningState;
@@ -140,10 +146,23 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<IPConfiguration> IpConfigurations { get; private set; }
 
         /// <summary>
+        /// Gets array of IP configuration profiles which reference this
+        /// subnet.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.ipConfigurationProfiles")]
+        public IList<IPConfigurationProfile> IpConfigurationProfiles { get; private set; }
+
+        /// <summary>
         /// Gets an array of references to the external resources using subnet.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceNavigationLinks")]
         public IList<ResourceNavigationLink> ResourceNavigationLinks { get; set; }
+
+        /// <summary>
+        /// Gets an array of references to services injecting into this subnet.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.serviceAssociationLinks")]
+        public IList<ServiceAssociationLink> ServiceAssociationLinks { get; set; }
 
         /// <summary>
         /// Gets an array of references to the delegations on the subnet.
